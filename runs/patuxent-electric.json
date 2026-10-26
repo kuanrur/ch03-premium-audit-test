@@ -1,0 +1,292 @@
+{
+  "employer": "patuxent-electric",
+  "name": "Patuxent Electric",
+  "application": "APP-PE-0388",
+  "audit_period": [
+    "2025-07-07",
+    "2026-07-05"
+  ],
+  "guide_edition": "July 2025",
+  "sources": {
+    "guide_file": "classification-guide.md",
+    "employers_folder": "employer-files",
+    "read_from": "Google Drive folder 'CH03 premium audit' (1W7rU0rKs1Zv0HzwfA5jJxzOABrVaJhn1)",
+    "read_at_utc": "2026-10-26T19:18:56Z",
+    "guide_sha256": "89480f691737a0e8a762a836b8412476e0ed9d0b37639eb898e2826771c1dba8",
+    "employer_files_sha256": {
+      "application.md": "55f0c7b086ac550f0f8b98a9d22aa906ffe4005e2c8259fd5d9fe72e2d2bd07e",
+      "business-description.md": "ab025cd6d057708188e0060ef2309e64e990cdbbb25e4fe97402af6cf5434bfd",
+      "field-notes.md": "6055df5e294c902b884ece23e30a9b424f3f1df801e5c97c39eb12b93453d72e",
+      "payroll-register.csv": "1dd09ea917394706df1c0166ba3869cdb20820b0e7605c500d0a11d3f6263e71",
+      "site-signin-log.csv": "49e585c8512862c1959eefb431419d416e3bf236f0b4004347a4e7bfcc1195b6"
+    }
+  },
+  "accepted_employer_split": false,
+  "reported": {
+    "E-510": "306024.85",
+    "C-110": "161905.60"
+  },
+  "allocated": [
+    {
+      "class_code": "C-110",
+      "payroll_allocated": "43905.60",
+      "rationale_ref": "CG-04"
+    },
+    {
+      "class_code": "E-510",
+      "payroll_allocated": "424414.85",
+      "rationale_ref": "CG-21"
+    }
+  ],
+  "principal_business_code": "E-510",
+  "subjects": [
+    {
+      "label": "Raymond Dunmore (PE-E01)",
+      "kind": "employee",
+      "employer_code": "C-110",
+      "portions": [
+        {
+          "code": "E-510",
+          "amount": "118000.00",
+          "basis": "position 'Owner, Master Electrician' on payroll-register.csv; owner included in payroll, counted under the code for the owner's own work (CG-05); 214 job-site sign-ins in site-signin-log.csv",
+          "records": [
+            "payroll-register.csv",
+            "site-signin-log.csv"
+          ],
+          "refs": [
+            "CG-05",
+            "CG-02",
+            "CG-21"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Curtis Bell (PE-E02)",
+      "kind": "employee",
+      "employer_code": "E-510",
+      "portions": [
+        {
+          "code": "E-510",
+          "amount": "72410.35",
+          "basis": "position 'Journeyman Electrician' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-21"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Hector Ruiz (PE-E03)",
+      "kind": "employee",
+      "employer_code": "E-510",
+      "portions": [
+        {
+          "code": "E-510",
+          "amount": "69855.90",
+          "basis": "position 'Journeyman Electrician' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-21"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Aaron Weiss (PE-E04)",
+      "kind": "employee",
+      "employer_code": "E-510",
+      "portions": [
+        {
+          "code": "E-510",
+          "amount": "64120.65",
+          "basis": "position 'Journeyman Electrician' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-21"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Tyrone Banks (PE-E05)",
+      "kind": "employee",
+      "employer_code": "E-510",
+      "portions": [
+        {
+          "code": "E-510",
+          "amount": "58377.20",
+          "basis": "position 'Electrician' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-21"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Kyle Brandt (PE-E06)",
+      "kind": "employee",
+      "employer_code": "E-510",
+      "portions": [
+        {
+          "code": "E-510",
+          "amount": "41260.75",
+          "basis": "position 'Apprentice Electrician' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-21"
+          ]
+        },
+        {
+          "code": "E-510",
+          "amount": "390.00",
+          "basis": "travel allowance not backed by recorded travel days (0 days recorded)",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-03",
+            "CG-21"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Linda Marsh (PE-E07)",
+      "kind": "employee",
+      "employer_code": "C-110",
+      "portions": [
+        {
+          "code": "C-110",
+          "amount": "43905.60",
+          "basis": "position 'Office Administrator' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-04"
+          ]
+        }
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "label": "Curtis Bell (PE-E02)",
+      "amount": "2600.00",
+      "why": "travel allowance for 40 recorded travel days is a documented expense (CG-03)"
+    },
+    {
+      "label": "Hector Ruiz (PE-E03)",
+      "amount": "2600.00",
+      "why": "travel allowance for 40 recorded travel days is a documented expense (CG-03)"
+    },
+    {
+      "label": "Aaron Weiss (PE-E04)",
+      "amount": "2600.00",
+      "why": "travel allowance for 40 recorded travel days is a documented expense (CG-03)"
+    },
+    {
+      "label": "Tyrone Banks (PE-E05)",
+      "amount": "1034.00",
+      "why": "travel allowance for 22 recorded travel days is a documented expense (CG-03)"
+    }
+  ],
+  "adjustments": [
+    {
+      "subject": "Raymond Dunmore (PE-E01)",
+      "amount": "118000.00",
+      "from": "C-110",
+      "to": "E-510",
+      "reason": "position 'Owner, Master Electrician' on payroll-register.csv; owner included in payroll, counted under the code for the owner's own work (CG-05); 214 job-site sign-ins in site-signin-log.csv.",
+      "records": [
+        "payroll-register.csv",
+        "site-signin-log.csv"
+      ],
+      "refs": [
+        "CG-05",
+        "CG-02",
+        "CG-21"
+      ]
+    },
+    {
+      "subject": "Kyle Brandt (PE-E06)",
+      "amount": "390.00",
+      "from": null,
+      "to": "E-510",
+      "reason": "travel allowance not backed by recorded travel days (0 days recorded).",
+      "records": [
+        "payroll-register.csv"
+      ],
+      "refs": [
+        "CG-03",
+        "CG-21"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "subject": "Raymond Dunmore (PE-E01)",
+      "text": "Raymond Dunmore is an owner who has not filed an election of exclusion, so the owner's 118000.00 is counted under the code for the owner's own work (CG-05): E-510 (CG-21), from the position 'Owner, Master Electrician' and 214 job-site sign-ins in site-signin-log.csv. Please confirm the owner's duties in the period; if part of the time was office-only work, send time records for it (CG-07). The application reported this pay under C-110."
+    },
+    {
+      "subject": "Curtis Bell (PE-E02)",
+      "text": "payroll-register.csv shows 2600.00 of travel allowance for 40 travel days for Curtis Bell (PE-E02), left out of payroll as a documented expense. Please send the travel records (dates and job) behind those days."
+    },
+    {
+      "subject": "Hector Ruiz (PE-E03)",
+      "text": "payroll-register.csv shows 2600.00 of travel allowance for 40 travel days for Hector Ruiz (PE-E03), left out of payroll as a documented expense. Please send the travel records (dates and job) behind those days."
+    },
+    {
+      "subject": "Aaron Weiss (PE-E04)",
+      "text": "payroll-register.csv shows 2600.00 of travel allowance for 40 travel days for Aaron Weiss (PE-E04), left out of payroll as a documented expense. Please send the travel records (dates and job) behind those days."
+    },
+    {
+      "subject": "Tyrone Banks (PE-E05)",
+      "text": "payroll-register.csv shows 1034.00 of travel allowance for 22 travel days for Tyrone Banks (PE-E05), left out of payroll as a documented expense. Please send the travel records (dates and job) behind those days. That is 47.00 a day, against 65.00 a day for most employees; please explain the difference."
+    },
+    {
+      "subject": "Kyle Brandt (PE-E06)",
+      "text": "payroll-register.csv shows 390.00 of travel allowance for Kyle Brandt (PE-E06) with 0 travel days recorded. Without a record of travel it counts as payroll (CG-03). Please send the dates and receipts if this was a travel expense."
+    },
+    {
+      "subject": "Curtis Bell (PE-E02), Hector Ruiz (PE-E03), Aaron Weiss (PE-E04), Tyrone Banks (PE-E05)",
+      "text": "From the positions on payroll-register.csv, we placed Curtis Bell (PE-E02), Hector Ruiz (PE-E03), Aaron Weiss (PE-E04), Tyrone Banks (PE-E05) under E-510 (Electrical wiring, CG-21). Please confirm the duties in the period were only of that kind; if any of them did other work, tell us what and send time records for it."
+    },
+    {
+      "subject": "Linda Marsh (PE-E07)",
+      "text": "From the positions on payroll-register.csv, we placed Linda Marsh (PE-E07) under C-110 (Clerical office employees, CG-04). Please confirm the duties in the period were only of that kind; if this employee did other work, tell us what and send time records for it."
+    },
+    {
+      "subject": "payroll-register.csv",
+      "text": "Please confirm that payroll-register.csv (total 467930.45 for 7 employees) is the gross pay for the audit period 2025-07-07 to 2026-07-05, including all commissions and bonuses, and that it agrees with your payroll tax filings."
+    }
+  ],
+  "assumptions": [
+    "Principal business (CG-02): taken as the code with the most payroll outside C-110, measured from the records.",
+    "Travel allowance (CG-03): the part backed by recorded travel days, at the most common per-day amount (65.00), is a documented expense and not payroll; anything paid beyond that, or with no recorded days, is payroll under the employee's code."
+  ],
+  "records_used": {
+    "payroll-register.csv": "gross wages per employee for the audit period; travel days and travel allowance per employee",
+    "site-signin-log.csv": "dates and sites each employee signed in at a job site",
+    "field-notes.md": "auditor's visit notes, read for duties the records do not show"
+  }
+}

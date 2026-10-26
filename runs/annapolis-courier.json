@@ -1,0 +1,260 @@
+{
+  "employer": "annapolis-courier",
+  "name": "Annapolis Courier",
+  "application": "APP-AC-0529",
+  "audit_period": [
+    "2025-07-07",
+    "2026-07-05"
+  ],
+  "guide_edition": "July 2025",
+  "sources": {
+    "guide_file": "classification-guide.md",
+    "employers_folder": "employer-files",
+    "read_from": "Google Drive folder 'CH03 premium audit' (1W7rU0rKs1Zv0HzwfA5jJxzOABrVaJhn1)",
+    "read_at_utc": "2026-10-26T19:18:56Z",
+    "guide_sha256": "89480f691737a0e8a762a836b8412476e0ed9d0b37639eb898e2826771c1dba8",
+    "employer_files_sha256": {
+      "application.md": "8f3c3326bf18874c1c43cfaf60312f5b3ada13ad29a885c5a49f5418afc5b21b",
+      "business-description.md": "89ca4f6f3f3944fd1642514c9f7991e5943b8f013ab6e293ac8b4af562aca220",
+      "field-notes.md": "38916588e94bb87cb17a4c4e8988515c505c53f943287d2c17e55a13efd8dc84",
+      "payroll-register.csv": "5d88008ff2ce2ea367a89e95bdd81f38cc14d210ee15fd1556ec37fb6493930b",
+      "route-log.csv": "b7a8a9584ee7a4df25a6506f4473cbb6f52189b4b8ccc628bf442457b0400189",
+      "weekly-payroll.csv": "3e23df9b8139a36585e96760027d6d8d3117aa441f416431a71679e8f3ad5782"
+    }
+  },
+  "accepted_employer_split": false,
+  "reported": {
+    "T-610": "153886.20",
+    "C-110": "130629.20"
+  },
+  "allocated": [
+    {
+      "class_code": "C-110",
+      "payroll_allocated": "121206.50",
+      "rationale_ref": "CG-04"
+    },
+    {
+      "class_code": "T-610",
+      "payroll_allocated": "163308.90",
+      "rationale_ref": "CG-31"
+    }
+  ],
+  "principal_business_code": "T-610",
+  "subjects": [
+    {
+      "label": "Derek Nolan (AC-E01)",
+      "kind": "employee",
+      "employer_code": "T-610",
+      "portions": [
+        {
+          "code": "T-610",
+          "amount": "52956.80",
+          "basis": "position 'Driver' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-31"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Maria Santos (AC-E02)",
+      "kind": "employee",
+      "employer_code": "T-610",
+      "portions": [
+        {
+          "code": "T-610",
+          "amount": "51311.00",
+          "basis": "position 'Driver' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-31"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Felix Grant (AC-E03)",
+      "kind": "employee",
+      "employer_code": "T-610",
+      "portions": [
+        {
+          "code": "T-610",
+          "amount": "49618.40",
+          "basis": "position 'Driver' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-31"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Lena Ortiz (AC-E04)",
+      "kind": "employee",
+      "employer_code": "C-110",
+      "portions": [
+        {
+          "code": "T-610",
+          "amount": "9123.50",
+          "basis": "60 days on a delivery vehicle in route-log.csv, each priced at that week's gross pay divided by the week's operating days",
+          "records": [
+            "route-log.csv",
+            "weekly-payroll.csv"
+          ],
+          "refs": [
+            "CG-07",
+            "CG-31"
+          ]
+        },
+        {
+          "code": "C-110",
+          "amount": "38318.70",
+          "basis": "remaining days in the employee's own job",
+          "records": [
+            "route-log.csv",
+            "weekly-payroll.csv"
+          ],
+          "refs": [
+            "CG-07",
+            "CG-04"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Paul Haskins (AC-E05)",
+      "kind": "employee",
+      "employer_code": "C-110",
+      "portions": [
+        {
+          "code": "T-610",
+          "amount": "299.20",
+          "basis": "2 days on a delivery vehicle in route-log.csv, each priced at that week's gross pay divided by the week's operating days",
+          "records": [
+            "route-log.csv",
+            "weekly-payroll.csv"
+          ],
+          "refs": [
+            "CG-07",
+            "CG-31"
+          ]
+        },
+        {
+          "code": "C-110",
+          "amount": "46376.00",
+          "basis": "remaining days in the employee's own job",
+          "records": [
+            "route-log.csv",
+            "weekly-payroll.csv"
+          ],
+          "refs": [
+            "CG-07",
+            "CG-04"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Irene Voss (AC-E06)",
+      "kind": "employee",
+      "employer_code": "C-110",
+      "portions": [
+        {
+          "code": "C-110",
+          "amount": "36511.80",
+          "basis": "position 'Bookkeeper' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-04"
+          ]
+        }
+      ]
+    }
+  ],
+  "excluded": [],
+  "adjustments": [
+    {
+      "subject": "Lena Ortiz (AC-E04)",
+      "amount": "9123.50",
+      "from": "C-110",
+      "to": "T-610",
+      "reason": "60 days on a delivery vehicle in route-log.csv, each priced at that week's gross pay divided by the week's operating days.",
+      "records": [
+        "route-log.csv",
+        "weekly-payroll.csv"
+      ],
+      "refs": [
+        "CG-07",
+        "CG-31"
+      ]
+    },
+    {
+      "subject": "Paul Haskins (AC-E05)",
+      "amount": "299.20",
+      "from": "C-110",
+      "to": "T-610",
+      "reason": "2 days on a delivery vehicle in route-log.csv, each priced at that week's gross pay divided by the week's operating days.",
+      "records": [
+        "route-log.csv",
+        "weekly-payroll.csv"
+      ],
+      "refs": [
+        "CG-07",
+        "CG-31"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "subject": "Gloria Rhee",
+      "text": "Please send a copy of Gloria Rhee's election of exclusion so we can confirm it covers the whole audit period; the allocation does not count Gloria Rhee's pay (CG-05)."
+    },
+    {
+      "subject": "Lena Ortiz (AC-E04)",
+      "text": "route-log.csv shows Lena Ortiz (AC-E04) on a delivery vehicle on 60 days in the period, in 31 weeks, up to 3 days in one week. We moved 9123.50 of this pay to T-610 (CG-31) on that basis. The application says: \"Our dispatchers work the phones. Lena rides along about two days a week to train new stops, so at most two fifths of her time is on the road.\" Please confirm those days and how many days a week Lena Ortiz works; if fewer than the operating days in route-log.csv, the T-610 share rises. The application reported this pay under C-110."
+    },
+    {
+      "subject": "Paul Haskins (AC-E05)",
+      "text": "route-log.csv shows Paul Haskins (AC-E05) on a delivery vehicle on 2 days in the period. We moved 299.20 of this pay to T-610 (CG-31) on that basis. Please confirm those days and how many days a week Paul Haskins works; if fewer than the operating days in route-log.csv, the T-610 share rises. The application reported this pay under C-110."
+    },
+    {
+      "subject": "Derek Nolan (AC-E01), Maria Santos (AC-E02), Felix Grant (AC-E03)",
+      "text": "From the positions on payroll-register.csv, we placed Derek Nolan (AC-E01), Maria Santos (AC-E02), Felix Grant (AC-E03) under T-610 (Courier and delivery drivers, CG-31). Please confirm the duties in the period were only of that kind; if any of them did other work, tell us what and send time records for it."
+    },
+    {
+      "subject": "Irene Voss (AC-E06)",
+      "text": "From the positions on payroll-register.csv, we placed Irene Voss (AC-E06) under C-110 (Clerical office employees, CG-04). Please confirm the duties in the period were only of that kind; if this employee did other work, tell us what and send time records for it."
+    },
+    {
+      "subject": "payroll-register.csv",
+      "text": "Please confirm that payroll-register.csv (total 284515.40 for 6 employees) is the gross pay for the audit period 2025-07-07 to 2026-07-05, including all commissions and bonuses, and that it agrees with your payroll tax filings."
+    },
+    {
+      "subject": "weekly-payroll.csv",
+      "text": "Please confirm that weekly-payroll.csv (weekly gross pay, used to price each route day) is complete for the audit period."
+    }
+  ],
+  "assumptions": [
+    "Route-log division: a day on a delivery vehicle counts as a full day of T-610 work, and the days an employee works in a week are taken as the operating days in route-log.csv for that week (the records hold no attendance for office staff).",
+    "Principal business (CG-02): taken as the code with the most payroll outside C-110, measured from the records."
+  ],
+  "records_used": {
+    "payroll-register.csv": "gross wages per employee for the audit period",
+    "route-log.csv": "every route day with its driver and ride-along",
+    "weekly-payroll.csv": "weekly gross pay, used to price each route day",
+    "field-notes.md": "auditor's visit notes, read for duties the records do not show"
+  }
+}

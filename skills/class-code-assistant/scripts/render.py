@@ -46,15 +46,22 @@ def _decision(r: Result) -> str:
     if r.accepted:
         others = [f for f in r.records_used if f not in (reg, "field-notes.md")]
         checked = f", checked against {', '.join(others)}" if others else ""
+        open_points = [n for n in r.notes if n.startswith("Field notes:")]
+        tail = (" The field notes describe some work under another code, but with no time records to measure it the split "
+                "does not change; the employer is asked for those records (see Notes and the audit questions).") if open_points else ""
         return (f"**Decision: the employer's own split is accepted.** The payroll register ({reg}) gives the same codes and "
-                f"amounts to the cent{checked}, and no record shows payroll that can be measured under another code.")
-    files = []
+                f"amounts to the cent{checked}, and no record shows payroll that can be measured under another code.{tail}")
+    files, rules = [], []
     for a in r.adjustments:
         for f in a.records:
             if f not in files:
                 files.append(f)
+        p = r.guide.paragraphs[a.refs[0]]
+        rule = f"{p.title} ({p.id})"
+        if rule not in rules:
+            rules.append(rule)
     return (f"**Decision: the employer's own split is not accepted.** The employer's records disagree with the application, "
-            f"and the records decide. The allocation rests on {', '.join(files)}.")
+            f"and the records decide. Adjusted under {', '.join(rules)}. The allocation rests on {', '.join(files)}.")
 
 
 def report_section(r: Result) -> str:
@@ -101,13 +108,14 @@ def report_section(r: Result) -> str:
         for code in [c for c in r.guide.codes if c in reported or c in alloc]:
             diff = alloc.get(code, ZERO) - reported.get(code, ZERO)
             if diff:
-                ins = [a for a in r.adjustments if a.to_code == code]
-                outs = [a for a in r.adjustments if a.from_code == code]
                 parts = []
-                if ins:
-                    parts.append("in: " + "; ".join(f"{a.subject} {a.amount:.2f}" for a in ins))
-                if outs:
-                    parts.append("out: " + "; ".join(f"{a.subject} {a.amount:.2f}" for a in outs))
+                for word, side in (("in", "to_code"), ("out", "from_code")):
+                    moved: dict[str, Decimal] = {}
+                    for a in r.adjustments:
+                        if getattr(a, side) == code:
+                            moved[a.subject] = moved.get(a.subject, ZERO) + a.amount
+                    if moved:
+                        parts.append(f"{word}: " + "; ".join(f"{s} {v:.2f}" for s, v in moved.items()))
                 out.append(f"- {code} {diff:+.2f} ({' | '.join(parts)})")
         out.append("")
 
@@ -148,7 +156,7 @@ def report_section(r: Result) -> str:
 def questions_section(r: Result) -> str:
     out = [f"## {r.employer.name}", ""]
     for i, q in enumerate(r.questions, 1):
-        out.append(f"{i}. **{q.subject}.** {q.text}")
+        out.append(f"{i}. **{q.subject.rstrip('.')}.** {q.text}")
     return "\n".join(out) + "\n"
 
 

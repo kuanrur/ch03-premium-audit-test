@@ -211,6 +211,26 @@ def stems(words: list[str]) -> list[str]:
     return [w[: max(5, len(w) - 3)] for w in words]
 
 
+def hrs(h: Decimal) -> str:
+    return str(int(h)) if h == h.to_integral_value() else str(h)
+
+
+def days_text(n: int) -> str:
+    return f"{n} day" if n == 1 else f"{n} days"
+
+
+def site_text(counter: collections.Counter) -> str:
+    return ", ".join(f"{s} ({days_text(n)})" for s, n in counter.most_common())
+
+
+def note_quote(emp: Employer, name: str) -> str:
+    """The employer's own statement about this person on the application, if there is one."""
+    first = name.split()[0]
+    if emp.employer_note and (name in emp.employer_note or re.search(rf"\b{re.escape(first)}\b", emp.employer_note)):
+        return f" The application says: \"{emp.employer_note}\""
+    return ""
+
+
 # ---------------------------------------------------------------- the rules
 
 
@@ -274,6 +294,7 @@ def allocate(emp: Employer, guide: Guide) -> Result:
 
     # Time records with a type of work: divide payroll by hours (CG-07).
     hours: dict[str, dict[str, Decimal]] = collections.defaultdict(lambda: collections.defaultdict(Decimal))
+    kinds: dict[str, dict[str, collections.Counter]] = collections.defaultdict(lambda: collections.defaultdict(collections.Counter))
     if "timesheets" in emp.records:
         tfile = files["timesheets"]
         unknown_types: collections.Counter = collections.Counter()
@@ -288,6 +309,7 @@ def allocate(emp: Employer, guide: Guide) -> Result:
             if code is None:
                 unknown_types[row["work_type"]] += 1
             hours[eid][code or "?"] += Decimal(row["hours"])
+            kinds[eid][code or "?"][row["work_type"]] += Decimal(row["hours"])
         if outside:
             notes.append(f"{outside} rows of {tfile} fall outside the audit period and were not used.")
         for wt, n in unknown_types.items():
@@ -297,14 +319,26 @@ def allocate(emp: Employer, guide: Guide) -> Result:
                 questions.append(Question(tfile, f"{tfile} records hours for {eid}, who is not on {reg_file}. Please explain whose pay covers those hours."))
                 continue
             merged: dict[str, Decimal] = collections.defaultdict(Decimal)
+            types: dict[str, collections.Counter] = collections.defaultdict(collections.Counter)
             for c, h in per.items():
-                merged[c if c != "?" else title_code[eid] or office] += h
+                target = c if c != "?" else title_code[eid] or office
+                merged[target] += h
+                types[target].update(kinds[eid][c])
             parts = split_amount(wages[eid], merged)
             total_h = sum(merged.values())
             for c, amt in parts.items():
                 if amt:
-                    subjects[eid].portions.append(Portion(c, amt, f"{merged[c]} of {total_h} hours recorded as {c} work", [tfile, reg_file], [refs["division"], guide.code_paragraph(c).id]))
+                    what = ", ".join(f"{t} {hrs(h)}" for t, h in types[c].most_common())
+                    subjects[eid].portions.append(Portion(c, amt, f"{hrs(merged[c])} of {hrs(total_h)} hours in {tfile} recorded as {what} ({c})", [tfile, reg_file], [refs["division"], guide.code_paragraph(c).id]))
             decided.add(eid)
+            all_types = collections.Counter()
+            for t in types.values():
+                all_types.update(t)
+            split_text = ", ".join(f"{c} {amt:.2f} ({guide.code_paragraph(c).id})" for c, amt in parts.items() if amt)
+            questions.append(Question(label[eid], f"{tfile} records {hrs(total_h)} hours for {label[eid]} in the period: "
+                                      + ", ".join(f"{t} {hrs(h)}" for t, h in all_types.most_common())
+                                      + f". Under {refs['division']} we divided the {wages[eid]} on {reg_file} by those hours: {split_text}. "
+                                      + f"Please confirm the hours and the type of work recorded for {by_id[eid]['name']}.{note_quote(emp, by_id[eid]['name'])}"))
         records_used[tfile] = "hours by type of work, used to divide crew payroll between codes"
 
     # Route log: office staff who drive or ride on delivery vehicles (CG-07).
@@ -349,14 +383,15 @@ def allocate(emp: Employer, guide: Guide) -> Result:
                 vehicle_amt = (wages[eid] * len(days) / total_days).quantize(CENT, rounding=ROUND_HALF_UP)
                 basis_rec = [rfile, reg_file]
             n = len(days)
-            subjects[eid].portions.append(Portion(vehicle_code, vehicle_amt, f"{n} route days on a delivery vehicle in {rfile}, priced at the week's gross pay divided by that week's operating days", basis_rec, [refs["division"], guide.code_paragraph(vehicle_code).id]))
+            subjects[eid].portions.append(Portion(vehicle_code, vehicle_amt, f"{days_text(n)} on a delivery vehicle in {rfile}, each priced at that week's gross pay divided by the week's operating days", basis_rec, [refs["division"], guide.code_paragraph(vehicle_code).id]))
             if wages[eid] - vehicle_amt:
                 subjects[eid].portions.append(Portion(base, wages[eid] - vehicle_amt, "remaining days in the employee's own job", basis_rec, [refs["division"], guide.code_paragraph(base).id]))
             decided.add(eid)
             per_week = collections.Counter(week_start(d) for d in days)
             busiest = max(per_week.values())
             assume(f"Route-log division: a day on a delivery vehicle counts as a full day of {vehicle_code} work, and the days an employee works in a week are taken as the operating days in {rfile} for that week (the records hold no attendance for office staff).")
-            questions.append(Question(label[eid], f"{rfile} shows {label[eid]} on a delivery vehicle on {n} days in the period (as many as {busiest} days in one week). We moved {vehicle_amt} of this pay to {vehicle_code} ({guide.code_paragraph(vehicle_code).id}) on that basis. Please confirm those days and how many days a week {by_id[eid]['name']} works; if fewer than the {rfile} operating days, the {vehicle_code} share rises."))
+            peak = f", in {len(per_week)} weeks, up to {days_text(busiest)} in one week" if busiest > 1 else ""
+            questions.append(Question(label[eid], f"{rfile} shows {label[eid]} on a delivery vehicle on {days_text(n)} in the period{peak}. We moved {vehicle_amt} of this pay to {vehicle_code} ({guide.code_paragraph(vehicle_code).id}) on that basis.{note_quote(emp, by_id[eid]['name'])} Please confirm those days and how many days a week {by_id[eid]['name']} works; if fewer than the operating days in {rfile}, the {vehicle_code} share rises."))
 
     # Site sign-ins (office staff who go to job sites are not confined to an office).
     signins: dict[str, list[dt.date]] = collections.defaultdict(list)
@@ -390,13 +425,15 @@ def allocate(emp: Employer, guide: Guide) -> Result:
             questions.append(Question(label[eid], f"The position '{by_id[eid]['position']}' on {reg_file} does not match a code in the guide. Please describe {by_id[eid]['name']}'s duties."))
             continue
         basis = f"position '{by_id[eid]['position']}' on {reg_file}"
+        cites = [refs["assigning"], guide.code_paragraph(code).id]
         if eid in owner_ids:
             basis += f"; owner included in payroll, counted under the code for the owner's own work ({refs['owners']})"
+            cites.insert(0, refs["owners"])
         recs = [reg_file]
         if signins.get(eid):
             basis += f"; {len(signins[eid])} job-site sign-ins in {files['site_signins']}"
             recs.append(files["site_signins"])
-        subjects[eid].portions.append(Portion(code, wages[eid], basis, recs, [refs["assigning"], guide.code_paragraph(code).id]))
+        subjects[eid].portions.append(Portion(code, wages[eid], basis, recs, cites))
         decided.add(eid)
         if eid in owner_ids:
             seen = f" and {len(signins[eid])} job-site sign-ins in {files['site_signins']}" if signins.get(eid) else ""
@@ -425,14 +462,16 @@ def allocate(emp: Employer, guide: Guide) -> Result:
         recs = [reg_file]
         if signins.get(eid):
             recs.append(files["site_signins"])
-            site_list = ", ".join(f"{s} ({n})" for s, n in sites[eid].most_common())
-            basis = (f"{len(signins[eid])} job-site sign-ins in {files['site_signins']} ({site_list}): duties are not confined to an office "
-                     f"({office_ref}) and no time records divide them ({refs['division']}), so the payroll follows the principal business code")
+            site_list = site_text(sites[eid])
+            n = len(signins[eid])
+            basis = (f"{n} job-site sign-ins in {files['site_signins']} ({site_list}): duties are not confined to an office "
+                     f"({office_ref}) and no time records divide them ({refs['division']}), so the payroll follows the principal business code {governing}")
             assume(f"Office staff who sign in at job sites are not confined to an office ({office_ref}); without time records ({refs['division']}) their whole payroll goes to the principal business code ({refs['assigning']}), however few the visits.")
+            said = note_quote(emp, by_id[eid]["name"])
             if governing == office:
-                questions.append(Question(label[eid], f"{files['site_signins']} shows {label[eid]} at {site_list} on {len(signins[eid])} days. We kept this pay under {office} because the business has no other code. Please confirm what {by_id[eid]['name']} did on those visits and that it involved no physical work."))
+                questions.append(Question(label[eid], f"{files['site_signins']} shows {label[eid]} signing in at {site_list}. We kept this pay under {office} because the business has no other code.{said} Please confirm what {by_id[eid]['name']} did on those visits and that it involved no physical work."))
             else:
-                questions.append(Question(label[eid], f"{files['site_signins']} shows {label[eid]} at job sites on {len(signins[eid])} days ({site_list}). Because the work is not confined to the office, all {wages[eid]} goes under {governing} ({guide.code_paragraph(governing).id}). Please confirm what {by_id[eid]['name']} does at the sites and whether you keep time records that separate site time from office time."))
+                questions.append(Question(label[eid], f"{files['site_signins']} shows {label[eid]} signing in at job sites on {days_text(n)}: {site_list}. Because the work is not confined to the office, all {wages[eid]} goes under the principal business code {governing} ({guide.code_paragraph(governing).id}); {governing_basis}.{said} Please confirm what {by_id[eid]['name']} does at the sites and whether you keep time records that separate site time from office time."))
         else:
             basis = "position does not match a code in the guide; placed under the principal business code until the duties are confirmed"
         subjects[eid].portions.append(Portion(governing, wages[eid], basis, recs, [refs["assigning"], guide.code_paragraph(governing).id]))
@@ -487,6 +526,7 @@ def allocate(emp: Employer, guide: Guide) -> Result:
         if certs:
             records_used[cfile] = "subcontractors' workers' compensation certificates and coverage dates"
         uninsured_by_sub: dict[str, list] = collections.defaultdict(list)
+        insured_by_sub: dict[str, list] = collections.defaultdict(list)
         for row in emp.records["subcontractor_payments"]:
             day = parse_date(row["date"], pfile)
             if not emp.in_period(day):
@@ -500,10 +540,7 @@ def allocate(emp: Employer, guide: Guide) -> Result:
             covered = bool(cert) and parse_date(cert["coverage_from"], cfile) <= day <= parse_date(cert["coverage_to"], cfile)
             if covered:
                 excluded.append((who, amount, f"covered by certificate {cert['certificate_no']} ({cert['coverage_from']} to {cert['coverage_to']}); not payroll ({refs['subs']})"))
-                text = f"We relied on certificate {cert['certificate_no']} ({cert['coverage_from']} to {cert['coverage_to']}) for {who} ({amount}) and did not count it as payroll."
-                if how == "probable":
-                    text += f" The certificate is issued to '{cert['subcontractor']}'; please confirm it is the same company as '{row['subcontractor']}'."
-                questions.append(Question(row["subcontractor"], text + " Please confirm the work was done within the coverage dates."))
+                insured_by_sub[row["subcontractor"]].append((who, amount, cert, how))
                 continue
             code = lookup(row["work"], work_types)
             if code is None:
@@ -516,6 +553,14 @@ def allocate(emp: Employer, guide: Guide) -> Result:
             subj.portions.append(Portion(code, amount, f"{row['work']} work by an uninsured subcontractor ({reason})", [pfile] + ([cfile] if certs else []), [refs["subs"], guide.code_paragraph(code).id]))
             sub_subjects.append(subj)
             uninsured_by_sub[row["subcontractor"]].append((who, amount, code, reason, cert, how))
+        for sub, items in insured_by_sub.items():
+            cert, how = items[0][2], items[0][3]
+            invoices = "; ".join(f"{i[0]} ({i[1]})" for i in items)
+            text = (f"We relied on certificate {cert['certificate_no']} ({cert['coverage_from']} to {cert['coverage_to']}) and did not count "
+                    f"these payments to {sub} as payroll ({refs['subs']}): {invoices}.")
+            if how == "probable":
+                text += f" The certificate is issued to '{cert['subcontractor']}'; please confirm it is the same company as '{sub}'."
+            questions.append(Question(sub, text + " Please confirm the work was done within the coverage dates and send the certificate itself."))
         for sub, items in uninsured_by_sub.items():
             total = sum((i[1] for i in items), ZERO)
             invoices = "; ".join(f"{i[0]} ({i[1]})" for i in items)
@@ -575,14 +620,16 @@ def allocate(emp: Employer, guide: Guide) -> Result:
             subjects[eid].employer_code = code
         for s in subjects.values():
             for p in s.portions:
-                if p.code != s.employer_code:
-                    origin = s.employer_code
-                    if "allowance not backed" in p.basis:
-                        adjustments.append(Adjustment(s.label, p.amount, None, p.code, p.basis + ".", p.records, p.refs))
-                    else:
-                        adjustments.append(Adjustment(s.label, p.amount, origin, p.code, p.basis + ".", p.records, p.refs))
-                elif "allowance not backed" in p.basis:
+                if "allowance not backed" in p.basis:
                     adjustments.append(Adjustment(s.label, p.amount, None, p.code, p.basis + ".", p.records, p.refs))
+                elif p.code != s.employer_code:
+                    adjustments.append(Adjustment(s.label, p.amount, s.employer_code, p.code, p.basis + ".", p.records, p.refs))
+        for s in subjects.values():
+            if s.employer_code and any(p.code != s.employer_code and "allowance not backed" not in p.basis for p in s.portions):
+                for q in questions:
+                    if q.subject == s.label:
+                        q.text += f" The application reported this pay under {s.employer_code}."
+                        break
     else:
         notes.append("The employer's split could not be matched to individual employees on the register, so differences are shown by code only.")
         for s in subjects.values():
@@ -600,7 +647,8 @@ def allocate(emp: Employer, guide: Guide) -> Result:
             by_code_title[s.portions[0].code].append(eid)
     for c, eids in by_code_title.items():
         names = ", ".join(label[e] for e in eids)
-        questions.append(Question(names, f"Based on {reg_file}, we placed {names} under {c} ({guide.code_paragraph(c).code_name}, {guide.code_paragraph(c).id}). Please confirm their duties in the period were only of that kind, or tell us who did other work and send time records for it."))
+        who = "this employee" if len(eids) == 1 else "any of them"
+        questions.append(Question(names, f"From the positions on {reg_file}, we placed {names} under {c} ({guide.code_paragraph(c).code_name}, {guide.code_paragraph(c).id}). Please confirm the duties in the period were only of that kind; if {who} did other work, tell us what and send time records for it."))
 
     # Every adjustment has a question; every record relied on has a question.
     for a in adjustments:

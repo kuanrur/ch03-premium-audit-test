@@ -1,0 +1,162 @@
+{
+  "employer": "harbor-point-legal",
+  "name": "Harbor Point Legal",
+  "application": "APP-HPL-0102",
+  "audit_period": [
+    "2025-07-07",
+    "2026-07-05"
+  ],
+  "guide_edition": "July 2025",
+  "sources": {
+    "guide_file": "classification-guide.md",
+    "employers_folder": "employer-files",
+    "read_from": "Google Drive folder 'CH03 premium audit' (1W7rU0rKs1Zv0HzwfA5jJxzOABrVaJhn1)",
+    "read_at_utc": "2026-10-26T19:18:56Z",
+    "guide_sha256": "89480f691737a0e8a762a836b8412476e0ed9d0b37639eb898e2826771c1dba8",
+    "employer_files_sha256": {
+      "application.md": "bfe89a3e1b01cceda79c992cda0e9fae9aef9148311b0d353bff4fb4fa1d18f1",
+      "business-description.md": "e2836b532e7aae28f3a9d2bf755f57240dcfefeb7ccb9a81302c6403277ecf20",
+      "field-notes.md": "79182f054841680bbd9878653043af29b0c10f4d866cc2339a62572cd9f69cee",
+      "payroll-register.csv": "d7473ff1ddf6a2d2dbd4a09925d0cd3afbdf8ca5ad4e59d0d0c4755fd01f60bb",
+      "site-signin-log.csv": "27674afc3b226422543bc722a1148791f9f5a54e063acb9bf46af6a46f6fe461"
+    }
+  },
+  "accepted_employer_split": true,
+  "reported": {
+    "C-110": "425148.16"
+  },
+  "allocated": [
+    {
+      "class_code": "C-110",
+      "payroll_allocated": "425148.16",
+      "rationale_ref": "CG-04"
+    }
+  ],
+  "principal_business_code": "C-110",
+  "subjects": [
+    {
+      "label": "Marcus Adeyemi (HP-E01)",
+      "kind": "employee",
+      "employer_code": "C-110",
+      "portions": [
+        {
+          "code": "C-110",
+          "amount": "128400.00",
+          "basis": "position 'Associate Attorney' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-04"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Julia Fenwick (HP-E02)",
+      "kind": "employee",
+      "employer_code": "C-110",
+      "portions": [
+        {
+          "code": "C-110",
+          "amount": "121750.00",
+          "basis": "position 'Associate Attorney' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-04"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Tomas Reyes (HP-E03)",
+      "kind": "employee",
+      "employer_code": "C-110",
+      "portions": [
+        {
+          "code": "C-110",
+          "amount": "64212.48",
+          "basis": "6 job-site sign-ins in site-signin-log.csv (Sallowmere Court Condominiums (6 days)): duties are not confined to an office (CG-04) and no time records divide them (CG-07), so the payroll follows the principal business code C-110",
+          "records": [
+            "payroll-register.csv",
+            "site-signin-log.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-04"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Ellen Short (HP-E04)",
+      "kind": "employee",
+      "employer_code": "C-110",
+      "portions": [
+        {
+          "code": "C-110",
+          "amount": "51880.16",
+          "basis": "position 'Legal Secretary' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-04"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Gwen Talbot (HP-E05)",
+      "kind": "employee",
+      "employer_code": "C-110",
+      "portions": [
+        {
+          "code": "C-110",
+          "amount": "58905.52",
+          "basis": "position 'Office Manager' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-04"
+          ]
+        }
+      ]
+    }
+  ],
+  "excluded": [],
+  "adjustments": [],
+  "questions": [
+    {
+      "subject": "Catherine Harbor",
+      "text": "Please send a copy of Catherine Harbor's election of exclusion so we can confirm it covers the whole audit period; the allocation does not count Catherine Harbor's pay (CG-05)."
+    },
+    {
+      "subject": "Tomas Reyes (HP-E03)",
+      "text": "site-signin-log.csv shows Tomas Reyes (HP-E03) signing in at Sallowmere Court Condominiums (6 days). We kept this pay under C-110 because the business has no other code. Please confirm what Tomas Reyes did on those visits and that it involved no physical work."
+    },
+    {
+      "subject": "Marcus Adeyemi (HP-E01), Julia Fenwick (HP-E02), Ellen Short (HP-E04), Gwen Talbot (HP-E05)",
+      "text": "From the positions on payroll-register.csv, we placed Marcus Adeyemi (HP-E01), Julia Fenwick (HP-E02), Ellen Short (HP-E04), Gwen Talbot (HP-E05) under C-110 (Clerical office employees, CG-04). Please confirm the duties in the period were only of that kind; if any of them did other work, tell us what and send time records for it."
+    },
+    {
+      "subject": "payroll-register.csv",
+      "text": "Please confirm that payroll-register.csv (total 425148.16 for 5 employees) is the gross pay for the audit period 2025-07-07 to 2026-07-05, including all commissions and bonuses, and that it agrees with your payroll tax filings."
+    }
+  ],
+  "assumptions": [
+    "Office staff who sign in at job sites are not confined to an office (CG-04); without time records (CG-07) their whole payroll goes to the principal business code (CG-02), however few the visits."
+  ],
+  "records_used": {
+    "payroll-register.csv": "gross wages per employee for the audit period",
+    "site-signin-log.csv": "dates and sites each employee signed in at a job site",
+    "field-notes.md": "auditor's visit notes, read for duties the records do not show"
+  }
+}

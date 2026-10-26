@@ -1,0 +1,626 @@
+{
+  "employer": "bay-crest-exteriors",
+  "name": "Bay Crest Exteriors",
+  "application": "APP-BCE-0217",
+  "audit_period": [
+    "2025-07-07",
+    "2026-07-05"
+  ],
+  "guide_edition": "July 2025",
+  "sources": {
+    "guide_file": "classification-guide.md",
+    "employers_folder": "employer-files",
+    "read_from": "Google Drive folder 'CH03 premium audit' (1W7rU0rKs1Zv0HzwfA5jJxzOABrVaJhn1)",
+    "read_at_utc": "2026-10-26T19:18:56Z",
+    "guide_sha256": "89480f691737a0e8a762a836b8412476e0ed9d0b37639eb898e2826771c1dba8",
+    "employer_files_sha256": {
+      "application.md": "8df9839f4ee7b50bd3b065126c0c41560b912388732b2f663a7fb9bc6d1321be",
+      "business-description.md": "22e444081d2d03944c083c01b0edc3969eefb8312f913d1b07c28610f4590e29",
+      "crew-timesheets.csv": "3f1317828f41db0e5b7e2daa74620b7e8785e2455b3599f66b2bc2612bd42d6c",
+      "field-notes.md": "f7b6b2c39c776fb5c6eae78d5552d5630e7ef2c8f832a5176bbd5c589b777405",
+      "payroll-register.csv": "2c05577fa783f77dd45f922c7e5a449cee03f6a3423d2ffb56526ed5d4df827d",
+      "site-signin-log.csv": "42b7021d03d32913a53173a5360c32fad36c6f60a0d264c87f81097da1a638e5"
+    }
+  },
+  "accepted_employer_split": false,
+  "reported": {
+    "C-110": "363970.45",
+    "R-310": "177527.60"
+  },
+  "allocated": [
+    {
+      "class_code": "C-110",
+      "payroll_allocated": "44812.35",
+      "rationale_ref": "CG-04"
+    },
+    {
+      "class_code": "R-310",
+      "payroll_allocated": "327491.05",
+      "rationale_ref": "CG-11"
+    },
+    {
+      "class_code": "R-320",
+      "payroll_allocated": "169194.65",
+      "rationale_ref": "CG-12"
+    }
+  ],
+  "principal_business_code": "R-310",
+  "subjects": [
+    {
+      "label": "Darnell Price (BC-E01)",
+      "kind": "employee",
+      "employer_code": "R-310",
+      "portions": [
+        {
+          "code": "R-310",
+          "amount": "51861.37",
+          "basis": "1504 of 1776 hours in crew-timesheets.csv recorded as roofing 1504 (R-310)",
+          "records": [
+            "crew-timesheets.csv",
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-07",
+            "CG-11"
+          ]
+        },
+        {
+          "code": "R-320",
+          "amount": "9379.18",
+          "basis": "272 of 1776 hours in crew-timesheets.csv recorded as siding 224, gutters 48 (R-320)",
+          "records": [
+            "crew-timesheets.csv",
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-07",
+            "CG-12"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Kevin Moraes (BC-E02)",
+      "kind": "employee",
+      "employer_code": "R-310",
+      "portions": [
+        {
+          "code": "R-310",
+          "amount": "47833.23",
+          "basis": "1408 of 1736 hours in crew-timesheets.csv recorded as roofing 1408 (R-310)",
+          "records": [
+            "crew-timesheets.csv",
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-07",
+            "CG-11"
+          ]
+        },
+        {
+          "code": "R-320",
+          "amount": "11142.97",
+          "basis": "328 of 1736 hours in crew-timesheets.csv recorded as siding 280, gutters 48 (R-320)",
+          "records": [
+            "crew-timesheets.csv",
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-07",
+            "CG-12"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Sam Okonjo (BC-E03)",
+      "kind": "employee",
+      "employer_code": "R-310",
+      "portions": [
+        {
+          "code": "R-310",
+          "amount": "52600.37",
+          "basis": "1608 of 1752 hours in crew-timesheets.csv recorded as roofing 1608 (R-310)",
+          "records": [
+            "crew-timesheets.csv",
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-07",
+            "CG-11"
+          ]
+        },
+        {
+          "code": "R-320",
+          "amount": "4710.48",
+          "basis": "144 of 1752 hours in crew-timesheets.csv recorded as siding 128, gutters 16 (R-320)",
+          "records": [
+            "crew-timesheets.csv",
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-07",
+            "CG-12"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Luis Carrillo (BC-E04)",
+      "kind": "employee",
+      "employer_code": "C-110",
+      "portions": [
+        {
+          "code": "R-310",
+          "amount": "41668.45",
+          "basis": "1312 of 1728 hours in crew-timesheets.csv recorded as roofing 1312 (R-310)",
+          "records": [
+            "crew-timesheets.csv",
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-07",
+            "CG-11"
+          ]
+        },
+        {
+          "code": "R-320",
+          "amount": "13211.95",
+          "basis": "416 of 1728 hours in crew-timesheets.csv recorded as siding 320, gutters 96 (R-320)",
+          "records": [
+            "crew-timesheets.csv",
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-07",
+            "CG-12"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Brian Tull (BC-E05)",
+      "kind": "employee",
+      "employer_code": "C-110",
+      "portions": [
+        {
+          "code": "R-310",
+          "amount": "37366.01",
+          "basis": "1216 of 1696 hours in crew-timesheets.csv recorded as roofing 1216 (R-310)",
+          "records": [
+            "crew-timesheets.csv",
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-07",
+            "CG-11"
+          ]
+        },
+        {
+          "code": "R-320",
+          "amount": "14749.74",
+          "basis": "480 of 1696 hours in crew-timesheets.csv recorded as siding 448, gutters 32 (R-320)",
+          "records": [
+            "crew-timesheets.csv",
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-07",
+            "CG-12"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Owen Petrakis (BC-E06)",
+      "kind": "employee",
+      "employer_code": "C-110",
+      "portions": [
+        {
+          "code": "R-310",
+          "amount": "22380.97",
+          "basis": "776 of 1720 hours in crew-timesheets.csv recorded as roofing 776 (R-310)",
+          "records": [
+            "crew-timesheets.csv",
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-07",
+            "CG-11"
+          ]
+        },
+        {
+          "code": "R-320",
+          "amount": "27226.33",
+          "basis": "944 of 1720 hours in crew-timesheets.csv recorded as siding 800, gutters 144 (R-320)",
+          "records": [
+            "crew-timesheets.csv",
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-07",
+            "CG-12"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Rafael Duarte (BC-E07)",
+      "kind": "employee",
+      "employer_code": "C-110",
+      "portions": [
+        {
+          "code": "R-320",
+          "amount": "44512.11",
+          "basis": "1568 of 1688 hours in crew-timesheets.csv recorded as siding 1296, gutters 272 (R-320)",
+          "records": [
+            "crew-timesheets.csv",
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-07",
+            "CG-12"
+          ]
+        },
+        {
+          "code": "R-310",
+          "amount": "3406.54",
+          "basis": "120 of 1688 hours in crew-timesheets.csv recorded as roofing 120 (R-310)",
+          "records": [
+            "crew-timesheets.csv",
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-07",
+            "CG-11"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Jamal Whitfield (BC-E08)",
+      "kind": "employee",
+      "employer_code": "C-110",
+      "portions": [
+        {
+          "code": "R-320",
+          "amount": "44261.89",
+          "basis": "1640 of 1712 hours in crew-timesheets.csv recorded as siding 1368, gutters 272 (R-320)",
+          "records": [
+            "crew-timesheets.csv",
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-07",
+            "CG-12"
+          ]
+        },
+        {
+          "code": "R-310",
+          "amount": "1943.21",
+          "basis": "72 of 1712 hours in crew-timesheets.csv recorded as roofing 72 (R-310)",
+          "records": [
+            "crew-timesheets.csv",
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-07",
+            "CG-11"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Teresa Lindqvist (BC-E09)",
+      "kind": "employee",
+      "employer_code": "C-110",
+      "portions": [
+        {
+          "code": "R-310",
+          "amount": "68430.90",
+          "basis": "9 job-site sign-ins in site-signin-log.csv (Stevensville siding (4 days), Severna Park re-roof (3 days), Arnold re-roof (2 days)): duties are not confined to an office (CG-04) and no time records divide them (CG-07), so the payroll follows the principal business code R-310",
+          "records": [
+            "payroll-register.csv",
+            "site-signin-log.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-11"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Nora Beckett (BC-E10)",
+      "kind": "employee",
+      "employer_code": "C-110",
+      "portions": [
+        {
+          "code": "C-110",
+          "amount": "44812.35",
+          "basis": "position 'Bookkeeper' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-04"
+          ]
+        }
+      ]
+    }
+  ],
+  "excluded": [],
+  "adjustments": [
+    {
+      "subject": "Darnell Price (BC-E01)",
+      "amount": "9379.18",
+      "from": "R-310",
+      "to": "R-320",
+      "reason": "272 of 1776 hours in crew-timesheets.csv recorded as siding 224, gutters 48 (R-320).",
+      "records": [
+        "crew-timesheets.csv",
+        "payroll-register.csv"
+      ],
+      "refs": [
+        "CG-07",
+        "CG-12"
+      ]
+    },
+    {
+      "subject": "Kevin Moraes (BC-E02)",
+      "amount": "11142.97",
+      "from": "R-310",
+      "to": "R-320",
+      "reason": "328 of 1736 hours in crew-timesheets.csv recorded as siding 280, gutters 48 (R-320).",
+      "records": [
+        "crew-timesheets.csv",
+        "payroll-register.csv"
+      ],
+      "refs": [
+        "CG-07",
+        "CG-12"
+      ]
+    },
+    {
+      "subject": "Sam Okonjo (BC-E03)",
+      "amount": "4710.48",
+      "from": "R-310",
+      "to": "R-320",
+      "reason": "144 of 1752 hours in crew-timesheets.csv recorded as siding 128, gutters 16 (R-320).",
+      "records": [
+        "crew-timesheets.csv",
+        "payroll-register.csv"
+      ],
+      "refs": [
+        "CG-07",
+        "CG-12"
+      ]
+    },
+    {
+      "subject": "Luis Carrillo (BC-E04)",
+      "amount": "41668.45",
+      "from": "C-110",
+      "to": "R-310",
+      "reason": "1312 of 1728 hours in crew-timesheets.csv recorded as roofing 1312 (R-310).",
+      "records": [
+        "crew-timesheets.csv",
+        "payroll-register.csv"
+      ],
+      "refs": [
+        "CG-07",
+        "CG-11"
+      ]
+    },
+    {
+      "subject": "Luis Carrillo (BC-E04)",
+      "amount": "13211.95",
+      "from": "C-110",
+      "to": "R-320",
+      "reason": "416 of 1728 hours in crew-timesheets.csv recorded as siding 320, gutters 96 (R-320).",
+      "records": [
+        "crew-timesheets.csv",
+        "payroll-register.csv"
+      ],
+      "refs": [
+        "CG-07",
+        "CG-12"
+      ]
+    },
+    {
+      "subject": "Brian Tull (BC-E05)",
+      "amount": "37366.01",
+      "from": "C-110",
+      "to": "R-310",
+      "reason": "1216 of 1696 hours in crew-timesheets.csv recorded as roofing 1216 (R-310).",
+      "records": [
+        "crew-timesheets.csv",
+        "payroll-register.csv"
+      ],
+      "refs": [
+        "CG-07",
+        "CG-11"
+      ]
+    },
+    {
+      "subject": "Brian Tull (BC-E05)",
+      "amount": "14749.74",
+      "from": "C-110",
+      "to": "R-320",
+      "reason": "480 of 1696 hours in crew-timesheets.csv recorded as siding 448, gutters 32 (R-320).",
+      "records": [
+        "crew-timesheets.csv",
+        "payroll-register.csv"
+      ],
+      "refs": [
+        "CG-07",
+        "CG-12"
+      ]
+    },
+    {
+      "subject": "Owen Petrakis (BC-E06)",
+      "amount": "22380.97",
+      "from": "C-110",
+      "to": "R-310",
+      "reason": "776 of 1720 hours in crew-timesheets.csv recorded as roofing 776 (R-310).",
+      "records": [
+        "crew-timesheets.csv",
+        "payroll-register.csv"
+      ],
+      "refs": [
+        "CG-07",
+        "CG-11"
+      ]
+    },
+    {
+      "subject": "Owen Petrakis (BC-E06)",
+      "amount": "27226.33",
+      "from": "C-110",
+      "to": "R-320",
+      "reason": "944 of 1720 hours in crew-timesheets.csv recorded as siding 800, gutters 144 (R-320).",
+      "records": [
+        "crew-timesheets.csv",
+        "payroll-register.csv"
+      ],
+      "refs": [
+        "CG-07",
+        "CG-12"
+      ]
+    },
+    {
+      "subject": "Rafael Duarte (BC-E07)",
+      "amount": "44512.11",
+      "from": "C-110",
+      "to": "R-320",
+      "reason": "1568 of 1688 hours in crew-timesheets.csv recorded as siding 1296, gutters 272 (R-320).",
+      "records": [
+        "crew-timesheets.csv",
+        "payroll-register.csv"
+      ],
+      "refs": [
+        "CG-07",
+        "CG-12"
+      ]
+    },
+    {
+      "subject": "Rafael Duarte (BC-E07)",
+      "amount": "3406.54",
+      "from": "C-110",
+      "to": "R-310",
+      "reason": "120 of 1688 hours in crew-timesheets.csv recorded as roofing 120 (R-310).",
+      "records": [
+        "crew-timesheets.csv",
+        "payroll-register.csv"
+      ],
+      "refs": [
+        "CG-07",
+        "CG-11"
+      ]
+    },
+    {
+      "subject": "Jamal Whitfield (BC-E08)",
+      "amount": "44261.89",
+      "from": "C-110",
+      "to": "R-320",
+      "reason": "1640 of 1712 hours in crew-timesheets.csv recorded as siding 1368, gutters 272 (R-320).",
+      "records": [
+        "crew-timesheets.csv",
+        "payroll-register.csv"
+      ],
+      "refs": [
+        "CG-07",
+        "CG-12"
+      ]
+    },
+    {
+      "subject": "Jamal Whitfield (BC-E08)",
+      "amount": "1943.21",
+      "from": "C-110",
+      "to": "R-310",
+      "reason": "72 of 1712 hours in crew-timesheets.csv recorded as roofing 72 (R-310).",
+      "records": [
+        "crew-timesheets.csv",
+        "payroll-register.csv"
+      ],
+      "refs": [
+        "CG-07",
+        "CG-11"
+      ]
+    },
+    {
+      "subject": "Teresa Lindqvist (BC-E09)",
+      "amount": "68430.90",
+      "from": "C-110",
+      "to": "R-310",
+      "reason": "9 job-site sign-ins in site-signin-log.csv (Stevensville siding (4 days), Severna Park re-roof (3 days), Arnold re-roof (2 days)): duties are not confined to an office (CG-04) and no time records divide them (CG-07), so the payroll follows the principal business code R-310.",
+      "records": [
+        "payroll-register.csv",
+        "site-signin-log.csv"
+      ],
+      "refs": [
+        "CG-02",
+        "CG-11"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "subject": "Philip Crestwood",
+      "text": "Please send a copy of Philip Crestwood's election of exclusion so we can confirm it covers the whole audit period; the allocation does not count Philip Crestwood's pay (CG-05)."
+    },
+    {
+      "subject": "Darnell Price (BC-E01)",
+      "text": "crew-timesheets.csv records 1776 hours for Darnell Price (BC-E01) in the period: roofing 1504, siding 224, gutters 48. Under CG-07 we divided the 61240.55 on payroll-register.csv by those hours: R-310 51861.37 (CG-11), R-320 9379.18 (CG-12). Please confirm the hours and the type of work recorded for Darnell Price. The application reported this pay under R-310."
+    },
+    {
+      "subject": "Kevin Moraes (BC-E02)",
+      "text": "crew-timesheets.csv records 1736 hours for Kevin Moraes (BC-E02) in the period: roofing 1408, siding 280, gutters 48. Under CG-07 we divided the 58976.20 on payroll-register.csv by those hours: R-310 47833.23 (CG-11), R-320 11142.97 (CG-12). Please confirm the hours and the type of work recorded for Kevin Moraes. The application reported this pay under R-310."
+    },
+    {
+      "subject": "Sam Okonjo (BC-E03)",
+      "text": "crew-timesheets.csv records 1752 hours for Sam Okonjo (BC-E03) in the period: roofing 1608, siding 128, gutters 16. Under CG-07 we divided the 57310.85 on payroll-register.csv by those hours: R-310 52600.37 (CG-11), R-320 4710.48 (CG-12). Please confirm the hours and the type of work recorded for Sam Okonjo. The application reported this pay under R-310."
+    },
+    {
+      "subject": "Luis Carrillo (BC-E04)",
+      "text": "crew-timesheets.csv records 1728 hours for Luis Carrillo (BC-E04) in the period: roofing 1312, siding 320, gutters 96. Under CG-07 we divided the 54880.40 on payroll-register.csv by those hours: R-310 41668.45 (CG-11), R-320 13211.95 (CG-12). Please confirm the hours and the type of work recorded for Luis Carrillo. The application reported this pay under C-110."
+    },
+    {
+      "subject": "Brian Tull (BC-E05)",
+      "text": "crew-timesheets.csv records 1696 hours for Brian Tull (BC-E05) in the period: roofing 1216, siding 448, gutters 32. Under CG-07 we divided the 52115.75 on payroll-register.csv by those hours: R-310 37366.01 (CG-11), R-320 14749.74 (CG-12). Please confirm the hours and the type of work recorded for Brian Tull. The application reported this pay under C-110."
+    },
+    {
+      "subject": "Owen Petrakis (BC-E06)",
+      "text": "crew-timesheets.csv records 1720 hours for Owen Petrakis (BC-E06) in the period: siding 800, roofing 776, gutters 144. Under CG-07 we divided the 49607.30 on payroll-register.csv by those hours: R-310 22380.97 (CG-11), R-320 27226.33 (CG-12). Please confirm the hours and the type of work recorded for Owen Petrakis. The application reported this pay under C-110."
+    },
+    {
+      "subject": "Rafael Duarte (BC-E07)",
+      "text": "crew-timesheets.csv records 1688 hours for Rafael Duarte (BC-E07) in the period: siding 1296, gutters 272, roofing 120. Under CG-07 we divided the 47918.65 on payroll-register.csv by those hours: R-320 44512.11 (CG-12), R-310 3406.54 (CG-11). Please confirm the hours and the type of work recorded for Rafael Duarte. The application reported this pay under C-110."
+    },
+    {
+      "subject": "Jamal Whitfield (BC-E08)",
+      "text": "crew-timesheets.csv records 1712 hours for Jamal Whitfield (BC-E08) in the period: siding 1368, gutters 272, roofing 72. Under CG-07 we divided the 46205.10 on payroll-register.csv by those hours: R-320 44261.89 (CG-12), R-310 1943.21 (CG-11). Please confirm the hours and the type of work recorded for Jamal Whitfield. The application reported this pay under C-110."
+    },
+    {
+      "subject": "Teresa Lindqvist (BC-E09)",
+      "text": "site-signin-log.csv shows Teresa Lindqvist (BC-E09) signing in at job sites on 9 days: Stevensville siding (4 days), Severna Park re-roof (3 days), Arnold re-roof (2 days). Because the work is not confined to the office, all 68430.90 goes under the principal business code R-310 (CG-11); R-310 carries the most payroll outside C-110 in the records (R-310 259060.15, R-320 169194.65). Please confirm what Teresa Lindqvist does at the sites and whether you keep time records that separate site time from office time. The application reported this pay under C-110."
+    },
+    {
+      "subject": "Nora Beckett (BC-E10)",
+      "text": "From the positions on payroll-register.csv, we placed Nora Beckett (BC-E10) under C-110 (Clerical office employees, CG-04). Please confirm the duties in the period were only of that kind; if this employee did other work, tell us what and send time records for it."
+    },
+    {
+      "subject": "payroll-register.csv",
+      "text": "Please confirm that payroll-register.csv (total 541498.05 for 10 employees) is the gross pay for the audit period 2025-07-07 to 2026-07-05, including all commissions and bonuses, and that it agrees with your payroll tax filings."
+    }
+  ],
+  "assumptions": [
+    "Principal business (CG-02): taken as the code with the most payroll outside C-110, measured from the records.",
+    "Office staff who sign in at job sites are not confined to an office (CG-04); without time records (CG-07) their whole payroll goes to the principal business code (CG-02), however few the visits."
+  ],
+  "records_used": {
+    "payroll-register.csv": "gross wages per employee for the audit period",
+    "crew-timesheets.csv": "hours by type of work, used to divide crew payroll between codes",
+    "site-signin-log.csv": "dates and sites each employee signed in at a job site",
+    "field-notes.md": "auditor's visit notes, read for duties the records do not show"
+  }
+}

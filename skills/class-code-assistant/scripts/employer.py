@@ -161,7 +161,8 @@ def load_employer(folder: Path) -> Employer:
             continue
         kind, rows = _classify_csv(path)
         if kind is None:
-            emp.unused_files[path.name] = "not a payroll, time, subcontractor or certificate record"
+            emp.unused_files[path.name] = ("not a payroll, time, subcontractor or certificate record; sales or other "
+                                           "figures are not records of time spent, so they do not divide payroll")
             continue
         if kind in emp.records:
             raise EmployerFileError(f"{folder.name}: two files look like {kind}: {emp.record_files[kind]}, {path.name}")

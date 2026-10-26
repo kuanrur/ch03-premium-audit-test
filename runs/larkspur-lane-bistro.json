@@ -1,0 +1,247 @@
+{
+  "employer": "larkspur-lane-bistro",
+  "name": "Larkspur Lane Bistro",
+  "application": "APP-LL-0611",
+  "audit_period": [
+    "2025-07-07",
+    "2026-07-05"
+  ],
+  "guide_edition": "July 2025",
+  "sources": {
+    "guide_file": "classification-guide.md",
+    "employers_folder": "employer-files",
+    "read_from": "Google Drive folder 'CH03 premium audit' (1W7rU0rKs1Zv0HzwfA5jJxzOABrVaJhn1)",
+    "read_at_utc": "2026-10-26T19:18:56Z",
+    "guide_sha256": "89480f691737a0e8a762a836b8412476e0ed9d0b37639eb898e2826771c1dba8",
+    "employer_files_sha256": {
+      "application.md": "e80ab8ffeb32d9208515da8f8671416f0897a71d83f6f6f223dd54e62486df7b",
+      "business-description.md": "296ef9224ae172d208941e67f6ba83bfa5ab049c46117acb56873bf56e707e5e",
+      "field-notes.md": "d7df20e3f376bd598149a7d0394a4a55dd898caaeb1cb1c9d73b2cf76b0f782c",
+      "gross-receipts.csv": "66f5e8a17bfe7cc4b0f4c36029859d4d20fa25ac64df3b426ccefb0471186d55",
+      "payroll-register.csv": "2190e692efc90ec036d6b69ee51726ca37d5ada823148c928e55396c0f188ecf"
+    }
+  },
+  "accepted_employer_split": true,
+  "reported": {
+    "F-710": "226431.55",
+    "F-720": "114293.80"
+  },
+  "allocated": [
+    {
+      "class_code": "F-710",
+      "payroll_allocated": "226431.55",
+      "rationale_ref": "CG-41"
+    },
+    {
+      "class_code": "F-720",
+      "payroll_allocated": "114293.80",
+      "rationale_ref": "CG-42"
+    }
+  ],
+  "principal_business_code": "F-710",
+  "subjects": [
+    {
+      "label": "Anton Varga (LL-E01)",
+      "kind": "employee",
+      "employer_code": "F-710",
+      "portions": [
+        {
+          "code": "F-710",
+          "amount": "52310.45",
+          "basis": "position 'Sous Chef' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-41"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Bea Lindell (LL-E02)",
+      "kind": "employee",
+      "employer_code": "F-710",
+      "portions": [
+        {
+          "code": "F-710",
+          "amount": "41872.30",
+          "basis": "position 'Line Cook' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-41"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Omar Haddad (LL-E03)",
+      "kind": "employee",
+      "employer_code": "F-710",
+      "portions": [
+        {
+          "code": "F-710",
+          "amount": "39640.15",
+          "basis": "position 'Line Cook' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-41"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Sophie Tran (LL-E04)",
+      "kind": "employee",
+      "employer_code": "F-710",
+      "portions": [
+        {
+          "code": "F-710",
+          "amount": "33215.80",
+          "basis": "position 'Server' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-41"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Will Garner (LL-E05)",
+      "kind": "employee",
+      "employer_code": "F-710",
+      "portions": [
+        {
+          "code": "F-710",
+          "amount": "31904.65",
+          "basis": "position 'Server' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-41"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Jose Melendez (LL-E06)",
+      "kind": "employee",
+      "employer_code": "F-710",
+      "portions": [
+        {
+          "code": "F-710",
+          "amount": "27488.20",
+          "basis": "position 'Dishwasher' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-41"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Hannah Pryor (LL-E07)",
+      "kind": "employee",
+      "employer_code": "F-720",
+      "portions": [
+        {
+          "code": "F-720",
+          "amount": "46725.55",
+          "basis": "position 'Catering Lead' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-42"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Ivan Petrov (LL-E08)",
+      "kind": "employee",
+      "employer_code": "F-720",
+      "portions": [
+        {
+          "code": "F-720",
+          "amount": "38190.40",
+          "basis": "position 'Event Cook' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-42"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Clara Bose (LL-E09)",
+      "kind": "employee",
+      "employer_code": "F-720",
+      "portions": [
+        {
+          "code": "F-720",
+          "amount": "29377.85",
+          "basis": "position 'Event Server' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-42"
+          ]
+        }
+      ]
+    }
+  ],
+  "excluded": [],
+  "adjustments": [],
+  "questions": [
+    {
+      "subject": "Rosa Delacroix",
+      "text": "Please send a copy of Rosa Delacroix's election of exclusion so we can confirm it covers the whole audit period; the allocation does not count Rosa Delacroix's pay (CG-05)."
+    },
+    {
+      "subject": "Hannah Pryor (LL-E07), Ivan Petrov (LL-E08), Clara Bose (LL-E09)",
+      "text": "The field notes say: \"The catering lead and her two crew members prepare event food in the restaurant kitchen and serve it at the venue; on quiet weeks they work restaurant shifts.\" Please tell us how many hours or shifts Hannah Pryor (LL-E07), Ivan Petrov (LL-E08), Clara Bose (LL-E09) worked as F-710 (Restaurants) in the period, and send any time or shift records. Without them the payroll stays under F-720."
+    },
+    {
+      "subject": "Anton Varga (LL-E01), Bea Lindell (LL-E02), Omar Haddad (LL-E03), Sophie Tran (LL-E04), Will Garner (LL-E05), Jose Melendez (LL-E06)",
+      "text": "From the positions on payroll-register.csv, we placed Anton Varga (LL-E01), Bea Lindell (LL-E02), Omar Haddad (LL-E03), Sophie Tran (LL-E04), Will Garner (LL-E05), Jose Melendez (LL-E06) under F-710 (Restaurants, CG-41). Please confirm the duties in the period were only of that kind; if any of them did other work, tell us what and send time records for it."
+    },
+    {
+      "subject": "Hannah Pryor (LL-E07), Ivan Petrov (LL-E08), Clara Bose (LL-E09)",
+      "text": "From the positions on payroll-register.csv, we placed Hannah Pryor (LL-E07), Ivan Petrov (LL-E08), Clara Bose (LL-E09) under F-720 (Off-site caterers, CG-42). Please confirm the duties in the period were only of that kind; if any of them did other work, tell us what and send time records for it."
+    },
+    {
+      "subject": "payroll-register.csv",
+      "text": "Please confirm that payroll-register.csv (total 340725.35 for 9 employees) is the gross pay for the audit period 2025-07-07 to 2026-07-05, including all commissions and bonuses, and that it agrees with your payroll tax filings."
+    }
+  ],
+  "assumptions": [
+    "Principal business (CG-02): taken as the code with the most payroll outside C-110, measured from the records.",
+    "Mixed duties without time records (CG-07): payroll is not divided on a narrative or on sales figures; the employee stays under the code of the job on the register until time records are produced."
+  ],
+  "records_used": {
+    "payroll-register.csv": "gross wages per employee for the audit period",
+    "field-notes.md": "auditor's visit notes, read for duties the records do not show"
+  }
+}

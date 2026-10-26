@@ -1,0 +1,462 @@
+{
+  "employer": "severn-homebuilders",
+  "name": "Severn Homebuilders",
+  "application": "APP-SH-0417",
+  "audit_period": [
+    "2025-07-07",
+    "2026-07-05"
+  ],
+  "guide_edition": "July 2025",
+  "sources": {
+    "guide_file": "classification-guide.md",
+    "employers_folder": "employer-files",
+    "read_from": "Google Drive folder 'CH03 premium audit' (1W7rU0rKs1Zv0HzwfA5jJxzOABrVaJhn1)",
+    "read_at_utc": "2026-10-26T19:18:56Z",
+    "guide_sha256": "89480f691737a0e8a762a836b8412476e0ed9d0b37639eb898e2826771c1dba8",
+    "employer_files_sha256": {
+      "application.md": "ee9aa45fe1247743dd9da4c6e7693dd8151630e98653fd944acdb817ff4b25ed",
+      "business-description.md": "7404b81d9cb83a1256a2e25299a5f9197a41f0f170236ac7633dc5f98692e9f5",
+      "field-notes.md": "1460d5cc05dc487d80bb2c382152dad609baf45cc24bec77035cf00359e5be6d",
+      "insurance-certificates.csv": "77ff18a72e35e9326e752e14d09aa5a8db63fd923d13afb107c06970ee489909",
+      "payroll-register.csv": "4536004d11a63f4e733a37905ab9201f021ee34a05982405dd7f8f48a81bd075",
+      "site-signin-log.csv": "9ae36a9e35bb64f9ccbecb9321c0fddf9f721ff1cfce7633bc5f45f00e9937f7",
+      "subcontractor-payments.csv": "114f76a91a9a66ea0c1fee4f8c19e268ada6119f18d4ec561d6a168833d4c516"
+    }
+  },
+  "accepted_employer_split": false,
+  "reported": {
+    "H-420": "284670.30",
+    "C-110": "177209.40"
+  },
+  "allocated": [
+    {
+      "class_code": "C-110",
+      "payroll_allocated": "46118.25",
+      "rationale_ref": "CG-04"
+    },
+    {
+      "class_code": "R-310",
+      "payroll_allocated": "31645.65",
+      "rationale_ref": "CG-11"
+    },
+    {
+      "class_code": "H-420",
+      "payroll_allocated": "456917.10",
+      "rationale_ref": "CG-15"
+    }
+  ],
+  "principal_business_code": "H-420",
+  "subjects": [
+    {
+      "label": "Garrett Holm (SH-E01)",
+      "kind": "employee",
+      "employer_code": "H-420",
+      "portions": [
+        {
+          "code": "H-420",
+          "amount": "66315.40",
+          "basis": "position 'Lead Carpenter' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-15"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Victor Amadi (SH-E02)",
+      "kind": "employee",
+      "employer_code": "H-420",
+      "portions": [
+        {
+          "code": "H-420",
+          "amount": "62780.15",
+          "basis": "position 'Carpenter' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-15"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Peter Kowal (SH-E03)",
+      "kind": "employee",
+      "employer_code": "H-420",
+      "portions": [
+        {
+          "code": "H-420",
+          "amount": "58442.60",
+          "basis": "position 'Carpenter' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-15"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Andre Sutton (SH-E04)",
+      "kind": "employee",
+      "employer_code": "H-420",
+      "portions": [
+        {
+          "code": "H-420",
+          "amount": "49905.85",
+          "basis": "position 'Laborer' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-15"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Colin Rusk (SH-E05)",
+      "kind": "employee",
+      "employer_code": "H-420",
+      "portions": [
+        {
+          "code": "H-420",
+          "amount": "47226.30",
+          "basis": "position 'Laborer' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-15"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Marissa Gale (SH-E06)",
+      "kind": "employee",
+      "employer_code": "C-110",
+      "portions": [
+        {
+          "code": "H-420",
+          "amount": "71250.45",
+          "basis": "4 job-site sign-ins in site-signin-log.csv (Lot 22 Heron Way (3 days), Lot 14 Riverside Ct (1 day)): duties are not confined to an office (CG-04) and no time records divide them (CG-07), so the payroll follows the principal business code H-420",
+          "records": [
+            "payroll-register.csv",
+            "site-signin-log.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-15"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Dana Whitcomb (SH-E07)",
+      "kind": "employee",
+      "employer_code": "C-110",
+      "portions": [
+        {
+          "code": "H-420",
+          "amount": "59840.70",
+          "basis": "11 job-site sign-ins in site-signin-log.csv (Lot 22 Heron Way (6 days), Lot 14 Riverside Ct (3 days), Lot 7 Mill Pond Rd (2 days)): duties are not confined to an office (CG-04) and no time records divide them (CG-07), so the payroll follows the principal business code H-420",
+          "records": [
+            "payroll-register.csv",
+            "site-signin-log.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-15"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Helen Ostrow (SH-E08)",
+      "kind": "employee",
+      "employer_code": "C-110",
+      "portions": [
+        {
+          "code": "C-110",
+          "amount": "46118.25",
+          "basis": "position 'Bookkeeper' on payroll-register.csv",
+          "records": [
+            "payroll-register.csv"
+          ],
+          "refs": [
+            "CG-02",
+            "CG-04"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Tidewater Drywall, invoice SV-TID-01 of 2025-10-03",
+      "kind": "subcontractor",
+      "employer_code": null,
+      "portions": [
+        {
+          "code": "H-420",
+          "amount": "18240.55",
+          "basis": "drywall work by an uninsured subcontractor (no certificate of insurance in the file)",
+          "records": [
+            "subcontractor-payments.csv",
+            "insurance-certificates.csv"
+          ],
+          "refs": [
+            "CG-06",
+            "CG-15"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Tidewater Drywall, invoice SV-TID-02 of 2026-02-27",
+      "kind": "subcontractor",
+      "employer_code": null,
+      "portions": [
+        {
+          "code": "H-420",
+          "amount": "22915.10",
+          "basis": "drywall work by an uninsured subcontractor (no certificate of insurance in the file)",
+          "records": [
+            "subcontractor-payments.csv",
+            "insurance-certificates.csv"
+          ],
+          "refs": [
+            "CG-06",
+            "CG-15"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Kent Island Roofing, invoice SV-KEN-02 of 2026-03-20",
+      "kind": "subcontractor",
+      "employer_code": null,
+      "portions": [
+        {
+          "code": "R-310",
+          "amount": "19880.45",
+          "basis": "roofing work by an uninsured subcontractor (certificate MD-WC-517736 ended 2026-01-31)",
+          "records": [
+            "subcontractor-payments.csv",
+            "insurance-certificates.csv"
+          ],
+          "refs": [
+            "CG-06",
+            "CG-11"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "Kent Island Roofing, invoice SV-KEN-03 of 2026-05-08",
+      "kind": "subcontractor",
+      "employer_code": null,
+      "portions": [
+        {
+          "code": "R-310",
+          "amount": "11765.20",
+          "basis": "roofing work by an uninsured subcontractor (certificate MD-WC-517736 ended 2026-01-31)",
+          "records": [
+            "subcontractor-payments.csv",
+            "insurance-certificates.csv"
+          ],
+          "refs": [
+            "CG-06",
+            "CG-11"
+          ]
+        }
+      ]
+    }
+  ],
+  "excluded": [
+    {
+      "label": "Tenbury Ridge Framing Co., invoice SV-TRF-01 of 2025-08-22",
+      "amount": "21480.00",
+      "why": "covered by certificate MD-WC-448201 (2025-06-01 to 2026-12-31); not payroll (CG-06)"
+    },
+    {
+      "label": "Kent Island Roofing, invoice SV-KEN-01 of 2025-09-12",
+      "amount": "14300.00",
+      "why": "covered by certificate MD-WC-517736 (2025-04-01 to 2026-01-31); not payroll (CG-06)"
+    },
+    {
+      "label": "Tenbury Ridge Framing Co., invoice SV-TRF-02 of 2025-11-14",
+      "amount": "18925.50",
+      "why": "covered by certificate MD-WC-448201 (2025-06-01 to 2026-12-31); not payroll (CG-06)"
+    },
+    {
+      "label": "Tenbury Ridge Framing Co., invoice SV-TRF-03 of 2026-04-03",
+      "amount": "24610.25",
+      "why": "covered by certificate MD-WC-448201 (2025-06-01 to 2026-12-31); not payroll (CG-06)"
+    }
+  ],
+  "adjustments": [
+    {
+      "subject": "Marissa Gale (SH-E06)",
+      "amount": "71250.45",
+      "from": "C-110",
+      "to": "H-420",
+      "reason": "4 job-site sign-ins in site-signin-log.csv (Lot 22 Heron Way (3 days), Lot 14 Riverside Ct (1 day)): duties are not confined to an office (CG-04) and no time records divide them (CG-07), so the payroll follows the principal business code H-420.",
+      "records": [
+        "payroll-register.csv",
+        "site-signin-log.csv"
+      ],
+      "refs": [
+        "CG-02",
+        "CG-15"
+      ]
+    },
+    {
+      "subject": "Dana Whitcomb (SH-E07)",
+      "amount": "59840.70",
+      "from": "C-110",
+      "to": "H-420",
+      "reason": "11 job-site sign-ins in site-signin-log.csv (Lot 22 Heron Way (6 days), Lot 14 Riverside Ct (3 days), Lot 7 Mill Pond Rd (2 days)): duties are not confined to an office (CG-04) and no time records divide them (CG-07), so the payroll follows the principal business code H-420.",
+      "records": [
+        "payroll-register.csv",
+        "site-signin-log.csv"
+      ],
+      "refs": [
+        "CG-02",
+        "CG-15"
+      ]
+    },
+    {
+      "subject": "Tidewater Drywall, invoice SV-TID-01 of 2025-10-03",
+      "amount": "18240.55",
+      "from": null,
+      "to": "H-420",
+      "reason": "drywall work by an uninsured subcontractor (no certificate of insurance in the file).",
+      "records": [
+        "subcontractor-payments.csv",
+        "insurance-certificates.csv"
+      ],
+      "refs": [
+        "CG-06",
+        "CG-15"
+      ]
+    },
+    {
+      "subject": "Tidewater Drywall, invoice SV-TID-02 of 2026-02-27",
+      "amount": "22915.10",
+      "from": null,
+      "to": "H-420",
+      "reason": "drywall work by an uninsured subcontractor (no certificate of insurance in the file).",
+      "records": [
+        "subcontractor-payments.csv",
+        "insurance-certificates.csv"
+      ],
+      "refs": [
+        "CG-06",
+        "CG-15"
+      ]
+    },
+    {
+      "subject": "Kent Island Roofing, invoice SV-KEN-02 of 2026-03-20",
+      "amount": "19880.45",
+      "from": null,
+      "to": "R-310",
+      "reason": "roofing work by an uninsured subcontractor (certificate MD-WC-517736 ended 2026-01-31).",
+      "records": [
+        "subcontractor-payments.csv",
+        "insurance-certificates.csv"
+      ],
+      "refs": [
+        "CG-06",
+        "CG-11"
+      ]
+    },
+    {
+      "subject": "Kent Island Roofing, invoice SV-KEN-03 of 2026-05-08",
+      "amount": "11765.20",
+      "from": null,
+      "to": "R-310",
+      "reason": "roofing work by an uninsured subcontractor (certificate MD-WC-517736 ended 2026-01-31).",
+      "records": [
+        "subcontractor-payments.csv",
+        "insurance-certificates.csv"
+      ],
+      "refs": [
+        "CG-06",
+        "CG-11"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "subject": "Martin Severn",
+      "text": "Please send a copy of Martin Severn's election of exclusion so we can confirm it covers the whole audit period; the allocation does not count Martin Severn's pay (CG-05)."
+    },
+    {
+      "subject": "Marissa Gale (SH-E06)",
+      "text": "site-signin-log.csv shows Marissa Gale (SH-E06) signing in at job sites on 4 days: Lot 22 Heron Way (3 days), Lot 14 Riverside Ct (1 day). Because the work is not confined to the office, all 71250.45 goes under the principal business code H-420 (CG-15); H-420 carries the most payroll outside C-110 in the records (H-420 284670.30). Please confirm what Marissa Gale does at the sites and whether you keep time records that separate site time from office time. The application reported this pay under C-110."
+    },
+    {
+      "subject": "Dana Whitcomb (SH-E07)",
+      "text": "site-signin-log.csv shows Dana Whitcomb (SH-E07) signing in at job sites on 11 days: Lot 22 Heron Way (6 days), Lot 14 Riverside Ct (3 days), Lot 7 Mill Pond Rd (2 days). Because the work is not confined to the office, all 59840.70 goes under the principal business code H-420 (CG-15); H-420 carries the most payroll outside C-110 in the records (H-420 284670.30). Please confirm what Dana Whitcomb does at the sites and whether you keep time records that separate site time from office time. The application reported this pay under C-110."
+    },
+    {
+      "subject": "Tenbury Ridge Framing Co.",
+      "text": "We relied on certificate MD-WC-448201 (2025-06-01 to 2026-12-31) and did not count these payments to Tenbury Ridge Framing Co. as payroll (CG-06): Tenbury Ridge Framing Co., invoice SV-TRF-01 of 2025-08-22 (21480.00); Tenbury Ridge Framing Co., invoice SV-TRF-02 of 2025-11-14 (18925.50); Tenbury Ridge Framing Co., invoice SV-TRF-03 of 2026-04-03 (24610.25). Please confirm the work was done within the coverage dates and send the certificate itself."
+    },
+    {
+      "subject": "Kent Island Roofing",
+      "text": "We relied on certificate MD-WC-517736 (2025-04-01 to 2026-01-31) and did not count these payments to Kent Island Roofing as payroll (CG-06): Kent Island Roofing, invoice SV-KEN-01 of 2025-09-12 (14300.00). The certificate is issued to 'Kent Island Roofing & Siding LLC'; please confirm it is the same company as 'Kent Island Roofing'. Please confirm the work was done within the coverage dates and send the certificate itself."
+    },
+    {
+      "subject": "Tidewater Drywall",
+      "text": "We counted 41155.65 paid to Tidewater Drywall as payroll under H-420 (CG-06): Tidewater Drywall, invoice SV-TID-01 of 2025-10-03 (18240.55); Tidewater Drywall, invoice SV-TID-02 of 2026-02-27 (22915.10). There is no certificate of insurance for Tidewater Drywall in the file. Please send one covering the dates of the work, if it exists."
+    },
+    {
+      "subject": "Kent Island Roofing",
+      "text": "We counted 31645.65 paid to Kent Island Roofing as payroll under R-310 (CG-06): Kent Island Roofing, invoice SV-KEN-02 of 2026-03-20 (19880.45); Kent Island Roofing, invoice SV-KEN-03 of 2026-05-08 (11765.20). Certificate MD-WC-517736 (issued to 'Kent Island Roofing & Siding LLC') covers 2025-04-01 to 2026-01-31. Please send a renewed certificate covering these payments, or the dates the work was done if it was within the coverage."
+    },
+    {
+      "subject": "Garrett Holm (SH-E01), Victor Amadi (SH-E02), Peter Kowal (SH-E03), Andre Sutton (SH-E04), Colin Rusk (SH-E05)",
+      "text": "From the positions on payroll-register.csv, we placed Garrett Holm (SH-E01), Victor Amadi (SH-E02), Peter Kowal (SH-E03), Andre Sutton (SH-E04), Colin Rusk (SH-E05) under H-420 (Residential homebuilding, CG-15). Please confirm the duties in the period were only of that kind; if any of them did other work, tell us what and send time records for it."
+    },
+    {
+      "subject": "Helen Ostrow (SH-E08)",
+      "text": "From the positions on payroll-register.csv, we placed Helen Ostrow (SH-E08) under C-110 (Clerical office employees, CG-04). Please confirm the duties in the period were only of that kind; if this employee did other work, tell us what and send time records for it."
+    },
+    {
+      "subject": "payroll-register.csv",
+      "text": "Please confirm that payroll-register.csv (total 461879.70 for 8 employees) is the gross pay for the audit period 2025-07-07 to 2026-07-05, including all commissions and bonuses, and that it agrees with your payroll tax filings."
+    },
+    {
+      "subject": "subcontractor-payments.csv",
+      "text": "Please confirm that subcontractor-payments.csv (payments to subcontractors, with the work and date) is complete for the audit period."
+    },
+    {
+      "subject": "insurance-certificates.csv",
+      "text": "Please confirm that insurance-certificates.csv (subcontractors' workers' compensation certificates and coverage dates) is complete for the audit period."
+    }
+  ],
+  "assumptions": [
+    "Principal business (CG-02): taken as the code with the most payroll outside C-110, measured from the records.",
+    "Office staff who sign in at job sites are not confined to an office (CG-04); without time records (CG-07) their whole payroll goes to the principal business code (CG-02), however few the visits.",
+    "Subcontractor names (CG-06): a payment name that is a shortened form of a certificate holder's name (for example without 'LLC' or a trade) is taken as the same company.",
+    "Uninsured subcontractors (CG-06): the full amount paid is treated as payroll under the code for the work, and the payment date is taken as the date of the work, because the file has no labor and material split and no work dates."
+  ],
+  "records_used": {
+    "payroll-register.csv": "gross wages per employee for the audit period",
+    "site-signin-log.csv": "dates and sites each employee signed in at a job site",
+    "subcontractor-payments.csv": "payments to subcontractors, with the work and date",
+    "insurance-certificates.csv": "subcontractors' workers' compensation certificates and coverage dates",
+    "field-notes.md": "auditor's visit notes, read for duties the records do not show"
+  }
+}
