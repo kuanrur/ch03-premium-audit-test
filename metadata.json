@@ -1,0 +1,31 @@
+{
+  "cli_version": "0.12.0",
+  "checkpoint_id": "01M5WTWNE8NMNM1JMXJMHX7E0K",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "runs/annapolis-courier.json",
+    "runs/bay-crest-exteriors.json",
+    "runs/harbor-point-legal.json",
+    "runs/larkspur-lane-bistro.json",
+    "runs/patuxent-electric.json",
+    "runs/severn-homebuilders.json"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": ""
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 4,
+    "cache_creation_tokens": 2558,
+    "cache_read_tokens": 670285,
+    "output_tokens": 4338,
+    "api_call_count": 2
+  }
+}
