@@ -72,6 +72,13 @@ def money(value: str, where: str) -> Decimal:
     return amount.quantize(Decimal("0.01"))
 
 
+def number(value: str, where: str) -> Decimal:
+    try:
+        return Decimal((value or "0").strip())
+    except InvalidOperation as exc:
+        raise EmployerFileError(f"{where}: {value!r} is not a number") from exc
+
+
 def parse_date(value: str, where: str) -> dt.date:
     try:
         return dt.date.fromisoformat(value.strip())

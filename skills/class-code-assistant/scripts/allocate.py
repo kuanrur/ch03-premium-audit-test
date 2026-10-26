@@ -17,7 +17,7 @@ from decimal import ROUND_DOWN, ROUND_HALF_UP, Decimal
 from itertools import combinations
 from pathlib import Path
 
-from employer import Employer, money, parse_date
+from employer import Employer, money, number, parse_date
 from guide import Guide, GuideError
 
 CENT = Decimal("0.01")
@@ -308,8 +308,9 @@ def allocate(emp: Employer, guide: Guide) -> Result:
             code = lookup(row["work_type"], work_types)
             if code is None:
                 unknown_types[row["work_type"]] += 1
-            hours[eid][code or "?"] += Decimal(row["hours"])
-            kinds[eid][code or "?"][row["work_type"]] += Decimal(row["hours"])
+            h = number(row["hours"], f"{tfile} {row['date']} {eid}")
+            hours[eid][code or "?"] += h
+            kinds[eid][code or "?"][row["work_type"]] += h
         if outside:
             notes.append(f"{outside} rows of {tfile} fall outside the audit period and were not used.")
         for wt, n in unknown_types.items():
@@ -483,7 +484,7 @@ def allocate(emp: Employer, guide: Guide) -> Result:
         days_col = f"{prefix}_days"
         rates = collections.Counter()
         for row in register:
-            days = Decimal(row.get(days_col) or 0)
+            days = number(row.get(days_col, ""), f"{reg_file} {row['employee_id']}")
             paid = money(row[col] or "0", reg_file)
             if days and paid:
                 rates[(paid / days).quantize(CENT)] += 1
@@ -497,7 +498,7 @@ def allocate(emp: Employer, guide: Guide) -> Result:
             paid = money(row[col] or "0", reg_file)
             if not paid:
                 continue
-            days = Decimal(row.get(days_col) or 0)
+            days = number(row.get(days_col, ""), f"{reg_file} {row['employee_id']}")
             documented = min(paid, (days * modal).quantize(CENT)) if (days and modal) else ZERO
             payroll_part = paid - documented
             if documented:

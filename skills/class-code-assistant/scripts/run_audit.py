@@ -92,9 +92,10 @@ def main(argv: list[str] | None = None) -> int:
         try:
             emp = load_employer(folder)
             result = allocate(emp, guide)
-        except (EmployerFileError, GuideError, ValueError) as exc:
+        except (EmployerFileError, GuideError, ValueError, ArithmeticError) as exc:
             failed += 1
-            print(f"error: {folder.name}: {exc}", file=sys.stderr)
+            msg = str(exc)
+            print(f"error: {msg if msg.startswith(folder.name) else f'{folder.name}: {msg}'}", file=sys.stderr)
             continue
         (out / "deliverables" / "codes" / f"{emp.slug}.csv").write_text(codes_csv(result), encoding="utf-8")
         merge_sections(out / "deliverables" / "audit-report.md", REPORT_TITLE, emp.slug, report_section(result), order)
