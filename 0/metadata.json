@@ -1,0 +1,65 @@
+{
+  "cli_version": "0.12.0",
+  "checkpoint_id": "01M5WTDW3WQ3FA18CWFJXQGZPG",
+  "session_id": "5c6d0284-ce41-4a5d-b257-ec8a50288cc3",
+  "strategy": "manual-commit",
+  "created_at": "2026-10-26T19:19:08.674114Z",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "skills/class-code-assistant/scripts/allocate.py",
+    "skills/class-code-assistant/scripts/employer.py",
+    "skills/class-code-assistant/scripts/render.py",
+    "skills/class-code-assistant/scripts/verify_outputs.py"
+  ],
+  "agent": "Claude Code",
+  "model": "claude-opus-5-5",
+  "turn_id": "6f7b8b3d2741",
+  "checkpoint_transcript_start": 1132,
+  "transcript_lines_at_start": 1132,
+  "compact_transcript_start": 81,
+  "token_usage": {
+    "input_tokens": 36,
+    "cache_creation_tokens": 55267,
+    "cache_read_tokens": 5255235,
+    "output_tokens": 20690,
+    "api_call_count": 18
+  },
+  "skill_events_version": 1,
+  "skill_events": [
+    {
+      "id": "claude-skill-toolu_01BV8AGA3irDEqHjd9WjX2KL",
+      "event_type": "tool_invocation",
+      "skill": {
+        "name": "anthropic-skills:chrome-browser"
+      },
+      "source": {
+        "agent": "claude-code",
+        "signal": "skill_tool_use",
+        "confidence": "explicit"
+      },
+      "turn_id": "6f7b8b3d2741",
+      "transcript_anchor": {
+        "unit": "line",
+        "start": 84,
+        "end": 85,
+        "entry_ids": [
+          "336f0088-f5b2-46db-8371-d93b4e0b202b"
+        ],
+        "tool_use_id": "toolu_01BV8AGA3irDEqHjd9WjX2KL"
+      },
+      "native": {
+        "tool_name": "Skill",
+        "tool_use_id": "toolu_01BV8AGA3irDEqHjd9WjX2KL"
+      },
+      "collapse": {
+        "target": "tool_pair",
+        "label": "Skill: anthropic-skills:chrome-browser",
+        "default_collapsed": true
+      }
+    }
+  ],
+  "session_metrics": {
+    "turn_count": 1
+  }
+}
