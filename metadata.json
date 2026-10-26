@@ -1,0 +1,32 @@
+{
+  "cli_version": "0.12.0",
+  "checkpoint_id": "01M5WT3WB3XXT25GXR4G37XD7X",
+  "strategy": "manual-commit",
+  "branch": "main",
+  "checkpoints_count": 1,
+  "files_touched": [
+    "skills/class-code-assistant/scripts/allocate.py",
+    "skills/class-code-assistant/scripts/employer.py",
+    "skills/class-code-assistant/scripts/fetch_drive.py",
+    "skills/class-code-assistant/scripts/guide.py",
+    "skills/class-code-assistant/scripts/render.py",
+    "skills/class-code-assistant/scripts/run_audit.py",
+    "skills/class-code-assistant/sources.json"
+  ],
+  "sessions": [
+    {
+      "metadata": "/0/metadata.json",
+      "transcript": "/0/full.jsonl",
+      "compact_transcript": "/0/transcript.jsonl",
+      "content_hash": "/0/content_hash.txt",
+      "prompt": "/0/prompt.txt"
+    }
+  ],
+  "token_usage": {
+    "input_tokens": 140,
+    "cache_creation_tokens": 422968,
+    "cache_read_tokens": 8942051,
+    "output_tokens": 104476,
+    "api_call_count": 70
+  }
+}

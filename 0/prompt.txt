@@ -1,0 +1,164 @@
+You are an end-to-end TEST LEARNER for the Catalyte AI Fellowship challenge INSURANCE-01. Kuan (she/her, the program lead) asked for this test to prove that a learner can go from the Classroom post to a graded submission. Work in this repository: ~/Code/ch03-premium-audit-test (a private copy of the starter repo; Entire session capture is already enabled here, so this session is being recorded as the learner's coding session).
+
+## Goal
+Do the whole assignment exactly as a learner would and leave a complete, committed repository ready to submit. The PM session (K5) will review it, push it, and Kuan will submit it from a student account. You do NOT push and do NOT submit.
+
+## Learner-only boundary (strict)
+Use ONLY what a learner has:
+- The Classroom post text below.
+- The assignment Google Doc linked in it (read it in full first: it owns scope, deliverables and submission requirements).
+- The starter repository README in this repo.
+- The Work Sim stakeholder interview at https://work-sim.catalyte.ai/s/ch03-premium-audit and the files/links the stakeholder gives you there.
+- The Classroom "Set up your environment" materials, if you need them.
+Never read anything else about this challenge: not ~/Documents/challenge-pipeline, not any curriculum repo or worktree, not /private/tmp scratchpads, not ~/Documents/ai-fellowship, not ~/.claude (memory, handoffs, projects), not any interviewee prompt or answer key. If you stumble on such material, stop reading it and mention it in your report.
+
+## The interview
+Kuan explicitly chose, for this test only, that you conduct the interview yourself through her logged-in Chrome (use the claude-in-chrome tools; load them in one ToolSearch call; open a new tab). She knows this breaks the learner Interview rule and that the result may be marked as agent-run; do the test anyway.
+- Plan for at most 3 conversations. Prepare your questions before each one from what you know so far, and ask completely, like a careful analyst.
+- If the page only allows voice and you cannot type, or login is required, stop and report exactly what you saw; do not try to bypass it.
+- After each conversation, use the page's own Markdown export and save the original export unchanged as one file per session under interviews/. If there is no export, stop and report.
+- Do not trigger browser alert/confirm dialogs. Do not enter any passwords.
+
+## The build
+Follow the assignment Doc's deliverables and requirements exactly (Skill, README, per-employer outputs, audit questions, audit report, verification). Run the Skill on all six employers, verify the results, and in this coding session state in your own words whether you accept each employer's own payroll split and what record that rests on (the task asks for this). Commit locally with clear messages as you go. Keep secrets out of the repo.
+
+## Report
+When finished (or blocked), write a report to /private/tmp/claude-501/-Users-kj/9f7f1af2-0199-4745-a141-36874ac98a15/scratchpad/ch03-e2e/report.md, in Traditional Chinese, without em or en dashes:
+- What you did, final commit hash, `git status`, `entire status` output.
+- The interview: how many conversations, export file names, anything that went wrong.
+- The assignment Doc's exact submission and access requirements (what must be submitted, whether the grader needs repo access and how), so the PM can complete them.
+- Anything in the learner path that was unclear, broken or missing (this is the main value of the test).
+Do not write to ~/.claude/topics or ~/.claude/tab-labels.
+
+## Rules you must follow (copied verbatim from the PM's rules)
+## 一定要先問 Kuan 的事
+
+你開的每個 subagent，prompt 裡都要把這一節照抄進去，並加上兩句：
+- 「碰到任何一條，停下來，把草稿或要做的事回傳給 PM，不要自己執行。」
+- 「如果你要再開 subagent，也要把這一節照抄進去。」
+
+1. **任何對外訊息**，包括 Slack、email、GitHub issue、PR、comment。
+   - 先把全文貼給她，她說 ok 才送。
+   - Slack 草稿用中文，寫成一段可以直接複製的文字，格式見記憶 `project_cohort_issue_workflow`。
+   - `#ai-fellows-program`（C0C4256NQ10）是 Slack Connect 頻道，Slack MCP 只能建草稿（`slack_send_message_draft`），由她自己按送出。
+   - 跟 Wei 的 DM 也要先給她看稿。
+2. **任何寫到 GitHub 的動作。** Kuan 在 curriculum、work-sim-alpha、catalyte-ai-skills 都有 push 權限，所以不能只靠權限擋。這裡用「白名單」：只有下面列出的可以用，其他一律先問。
+   - **git：** 只能用以下指令：
+     - 讀取類：clone、fetch、pull、log、diff、show、status、ls-remote、rev-parse、archive、submodule、`remote -v`、`remote get-url`、`config --get`
+     - 本機變更類：branch、checkout、switch、add、commit
+     - 保護設定：config、remote set-url，只用在下面的保險設定
+
+     `git push` 在任何形式下都禁止，包括寫明網址的 push、加 `--no-verify` 的 push，以及 `--dry-run`。
+   - **加 remote：** 不准新增 remote。pushurl 只擋得住 origin。
+   - **gh：** 只能用 `view`、`list`、`status`、`auth status`、`repo clone`。`gh api` 只能做 GET，不准加 `-X`、`-f`、`-F`、`--input`。
+   - **GitHub MCP：** 只能用名稱開頭是 `get_`、`list_`、`search_` 的工具。
+   - **技術上的保險：** 每個 clone 下來的 repo 都執行下面幾行：
+     ```
+     git -C <repo> remote set-url --push origin no-push://disabled
+     printf '#!/bin/sh\necho "push disabled by PM handoff" >&2\nexit 1\n' > <repo>/.git/hooks/pre-push
+     chmod +x <repo>/.git/hooks/pre-push
+     ```
+   - **之後拿到 submodule 時**（submodule 裡的 `.git` 是檔案不是資料夾，要用下面這個寫法）：
+     ```
+     git submodule foreach 'git remote set-url --push origin no-push://disabled; h=$(git rev-parse --git-path hooks)/pre-push; printf "#!/bin/sh\nexit 1\n" > "$h"; chmod +x "$h"'
+     ```
+3. **寫入任何共用系統**，包括 Classroom、Notion 的課程頁、Drive、Work Sim 網站、GitRoll 的任何服務。
+   - 本機跑 pipeline 時，五個服務一律設成 `not-used`，或用 Kuan 核准過的沙盒。
+   - 設定檔是各 challenge 的 `trainer/delivery/project-config.yaml`，範本在 `templates/challenge/project-config.yaml`。第一次跑之前，先把設定檔給她看。
+   - curriculum 的 `.claude/skills/classroom-delivery` 等 skill 會寫入 Classroom，不要觸發。
+   - 唯一的例外是她的私人 Notion 頁，見階段 1。
+4. **跑 pipeline 的任何部分**，包括下面三種：
+   - `start-challenge-generation` 的 paper round。它會依 `references/credentials.md` 去探測服務，其中 Classroom 的探測會「建立再刪除一份草稿」，屬於寫入。
+   - `curriculum-challenge-design`、`run-assessment-scans`、`test-curriculum-challenge`、`calibrate-curriculum-challenge`。
+   - 本機的訪談測試和評分測試。
+
+   每次跑之前都要先報：要跑什麼、會碰到哪些服務、預估的 token 和時間，等她同意。參考數字：E 那一輪約一天、1.387 億 token，用的是 Wei 的帳號；在 Kuan 這邊跑，用的是她的帳號。
+5. **安裝 plugin、改全域設定、拉大型 Docker image。** 例如安裝 `catalyte-ai-skills` plugin，這個目前沒裝，所以 `/catalyte-ai-skills:prep-goal` 現在叫不出來。
+6. **花錢的事**，例如 GCP、任何付費 API、需要金鑰的模型呼叫。
+   - Work Sim 的受訪者用的是 Google Vertex 上的 Gemini。
+   - 她名下 GCP 專案的帳單是公司的真帳戶。
+7. **刪除或覆蓋她的檔案。** 覆蓋前先 `cp FILE FILE.bak-YYYYMMDD`。
+8. **絕不在下面這三個本機資料夾裡開 session 或 subagent**，也就是不能把它們當 cwd，也不在裡面跑任何 git 指令：
+   - `~/Code/financial-health-brief`（Project A）
+   - `~/Code/regulatory-compliance`（Project B）
+   - `~/Code/event-coordination`（Project C 的 fork，名字跟 curriculum 裡的 C 資料夾一樣，不要搞混）
+
+   - **原因：** 這三個資料夾都裝了 entire.io 的錄製 hook（2026-10-11 用 `find ~/Code ~/Documents -maxdepth 3 -name .entire` 查過，只有這三個）。在裡面開的 session 或跑的 git 指令，都可能被錄進她自己的 passport。錄製設定在三個地方：
+     - `.entire/` 資料夾
+     - `.claude/settings.json` 裡的 session hook
+     - `.git/hooks/` 裡的 pre-push、post-commit、commit-msg、prepare-commit-msg、post-rewrite
+
+     A 另外還有 `.claude/auto-commit.sh`，會自動 commit。
+   - **要讀：** 只能從外面用絕對路徑讀檔案。任何 git 指令都不跑，連 `status` 也不行，因為 `status` 會改寫 `.git/index`。也不要改它們的任何設定。
+   - **要複製一份來用（例如拿來測評分）：** 不要從本機資料夾複製，原因有兩個：`cp -r` 會連 hook 一起複製，本機記錄的版本也可能是舊的。改成從 GitHub 用一般的 `git clone` 另外抓一份乾淨的副本。
+     - 不要用 `gh repo clone`。這三個 repo 都是 GitRollTraining repo 的 fork，`gh repo clone` 會自動多加一個指向上游的 `upstream` remote，而 pushurl 的保險只擋得住 origin。
+     - clone 完立刻刪掉錄製設定，再加上規則 2 的保險：
+     ```
+     D=~/Documents/challenge-pipeline/submissions/<repo>
+     git clone https://github.com/<owner>/<repo>.git "$D"
+     rm -rf "$D/.claude" "$D/.entire"
+     git -C "$D" remote set-url --push origin no-push://disabled
+     printf '#!/bin/sh\necho "push disabled by PM handoff" >&2\nexit 1\n' > "$D/.git/hooks/pre-push"
+     chmod +x "$D/.git/hooks/pre-push"
+     git -C "$D" remote -v
+     ```
+     最後一行應該只列出 origin。新 clone 的副本不會帶到本機的 git hook，但 `.claude` 和 `.entire` 是 repo 裡追蹤的檔案，所以要手動刪掉。
+   - **用哪個版本：** A 和 B 正式交件、被 Engine 評分的，是哪個 GitHub repo 的哪個 commit，要在階段 2 之前一起問 Kuan。可能的位置：
+     - A：`kuanrur/financial-health-brief`，或它在 GitRollTraining 的上游
+     - B：`kuanrur/regulatory-compliance`，或 `GitRollTraining/regulatory-compliance`
+
+     版本搞錯的話，拿去跟正式分數比對就沒有意義。
+   - **記憶要以這份交接檔為準：** 記憶 `project_catalyte_fellowship` 裡有兩句舊資訊，一是「只有 A 裝了 hook」，二是「用 `git archive` 複製」。兩句都以這裡為準，記憶檔也已經在 2026-10-11 更正。
+9. **GitRoll 私有 repo 的內容，不放進 Artifact 或任何公開的地方。**
+
+碰到任何一條，停下來，把草稿或要做的事回傳給 PM，不要自己執行。
+如果你要再開 subagent，也要把這一節照抄進去。
+GitRoll 私有 repo 的內容，不放進 Artifact 或任何公開的地方。
+
+Exception Kuan approved for this test only: creating interview sessions on the Work Sim website (rule 3) is allowed. Local `git commit` in ~/Code/ch03-premium-audit-test is allowed. Everything else above still applies: no push, no Classroom submission, no messages, no other shared-system writes.
+
+## The Classroom post (as learners see it)
+INSURANCE-01 Class Code and Premium Audit Assistant
+
+Scenario
+Linden Shore Mutual writes workers' compensation insurance in Maryland. Before a quote goes out, the premium audit team checks that each new employer's payroll sits under the right class code. The company, people, employers and records are fictional.
+
+Challenge
+Interview Nadia Brennan, Senior Premium Auditor, and build a reusable Agent Skill that does the first pass on any employer file: suggest the class codes, allocate the payroll to them, and list the questions she should put to the employer. Run it on all six employers and hand off the codes, the audit questions and the audit report. The Skill classifies and allocates payroll only; it does not set rates or quote premium.
+
+Interview rule
+You conduct the stakeholder interview yourself, and the questions are yours. Do not connect a coding agent or any other AI to the interview to run, script, or automate it. The interview transcript is assessed together with the code; a project whose interview was run by an agent is not scored.
+This is a real-case Challenge, closer to client work. The course rule is to plan for at most 3 conversations with the stakeholder, so prepare before each conversation and ask completely.
+
+Before you begin
+Complete the materials under "Set up your environment" in Classwork and verify actual coding-session capture before implementation. Coding-session capture does not replace your interview record.
+
+Project resources
+Assignment and submission requirements:
+https://docs.google.com/document/d/REDACTED/edit
+Starter repository:
+https://github.com/GitRollTraining/ch03-premium-audit
+Stakeholder interview:
+https://work-sim.catalyte.ai/s/ch03-premium-audit
+Shared coding-session capture setup:
+https://classroom.google.com/c/ODcyMjA4NTkwNDk2/m/ODc0NzI2NzQzMzQ2/details
+
+Workflow
+1. Read the assignment and follow the starter README to create your working repository.
+2. Conduct the interview yourself and obtain the employer files, the classification rules and the context you need.
+3. Build, run, verify and push the required work with its actual capture records.
+
+Submit
+Attach your completed GitHub repository URL here. Follow the assignment for the required commit, run, report, capture and access information.
+
+---
+
+Update from the PM, decided by Kuan: skip the interview entirely. Do not open Work Sim again and do not use the old conversation you saw there.
+
+Instead, use the materials directly from this Google Drive folder, which is where the stakeholder would normally point learners:
+https://drive.google.com/drive/folders/REDACTED
+Read the employer files and the classification guide from there (Drive read tools are fine). Everything else in your original instructions still holds: learner-only boundary, no push, no submission, no messages, local commits only.
+
+Then do the full build exactly as the assignment Doc requires: the Skill under skills/class-code-assistant/, README (setup, one-employer and all-six commands, how you verified), deliverables/codes/<employer>.csv for all six, deliverables/audit-questions.md, deliverables/audit-report.md. Run it on all six, verify the outputs against the Doc's format rules, and state in this session, in your own words, whether you accept each employer's own payroll split and what record that rests on. Where the guide leaves a case open, make a reasonable, clearly stated assumption and add a question for the employer; do not invent facts. Do not create interviews/ files; say in the README that no interview was conducted in this test.
+
+Commit as you go. Before finishing, follow the Classroom setup material's order: commit, then run `entire checkpoint list` and confirm checkpoints exist (do not push; the PM pushes). Then append a section "第二階段" to report.md with: final commit hash, git log --oneline, git status, entire checkpoint list output, what you assumed where the guide was silent, and anything unclear or broken in the materials.
